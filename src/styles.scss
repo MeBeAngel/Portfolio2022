@@ -1,6 +1,19 @@
-@import './components/ProfileImg/profileImg.scss';
+@import './components/HomePage/homePage.scss';
+@import './components/GameBoy/gameBoy.scss';
+@import './components/HomePage/MenuSection/menuSection.scss';
+@import './components/PageTitle/pageTitle.scss';
 
-.App {
-  font-family: sans-serif;
-  text-align: center;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #cccccc;
+  background-image: url("https://www.transparenttextures.com/patterns/bright-squares.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+a {
+  text-decoration: none;
 }
