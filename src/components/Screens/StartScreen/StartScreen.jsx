@@ -8,7 +8,7 @@ export default function StartScreen() {
       className="gameboy-inner-top__screen d-flex justify-content-center align-items-center text-danger"
       style={{ backgroundImage: `url(${Angel})` }}
     >
-      <h1>PRESS START</h1>
+      <h1 className="screen-title">PRESS START</h1>
     </Col>
   );
 }

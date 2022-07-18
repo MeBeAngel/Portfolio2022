@@ -22,14 +22,14 @@ export default function GameBoy() {
   };
 
   const handleUpClick = () => {
-    if (menuNum < 3 && startBtnClicked) {
+    if (menuNum < 3 && startBtnClicked && currentScreen === "menu") {
       setMenuNum(menuNum + 1);
       play();
     }
   };
 
   const handleDownClick = () => {
-    if (menuNum > 0 && startBtnClicked) {
+    if (menuNum > 0 && startBtnClicked && currentScreen === "menu") {
       setMenuNum(menuNum - 1);
       play();
     }
