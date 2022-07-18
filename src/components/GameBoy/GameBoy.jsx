@@ -11,33 +11,61 @@ import Right from "../../assets/caret-right.svg";
 import CursorSound from "../../assets/audio/cursor-sound.mp3";
 
 export default function GameBoy() {
-  const [startBtn, setStartBtn] = useState(false);
-  const [menuNum, setMenuNum] = useState(2);
+  const [startBtnClicked, setStartBtnClicked] = useState(false);
+  const [menuNum, setMenuNum] = useState(3);
+  const [currentScreen, setCurrentScreen] = useState("start");
   const [play] = useSound(CursorSound);
 
   const handleStartBtnClick = () => {
-    setStartBtn(true);
+    setStartBtnClicked(true);
+    setCurrentScreen("menu");
   };
 
   const handleUpClick = () => {
-    if (menuNum < 2 && startBtn) {
+    if (menuNum < 3 && startBtnClicked) {
       setMenuNum(menuNum + 1);
       play();
     }
   };
 
   const handleDownClick = () => {
-    if (menuNum > 0 && startBtn) {
+    if (menuNum > 0 && startBtnClicked) {
       setMenuNum(menuNum - 1);
       play();
     }
   };
 
+  const handleAButtonClick = () => {
+    if (menuNum === 3 && currentScreen === "menu") {
+      setCurrentScreen("about");
+    }
+    if (menuNum === 2 && currentScreen === "menu") {
+      setCurrentScreen("projects");
+    }
+    if (menuNum === 1 && currentScreen === "menu") {
+      setCurrentScreen("resume");
+    }
+    if (menuNum === 0 && currentScreen === "menu") {
+      setCurrentScreen("contact");
+    }
+  };
+
+  const handleBButtonClick = () => {
+    setCurrentScreen("menu");
+  };
+
   return (
-    <Container fluid className="home-page p-0">
-      <Row className="gameboy-shell d-flex flex-column bg-dark p-0 m-0 mx-auto">
+    <Container
+      fluid
+      className="home-page d-flex justify-content-center align-items-center p-0"
+    >
+      <Row className="gameboy-shell d-flex flex-column bg-dark p-0 m-0 mx-auto shadow">
         {/* Gameboy top screen section */}
-        <Screens startClicked={startBtn} menuNum={menuNum} />
+        <Screens
+          startBtnClicked={startBtnClicked}
+          menuNum={menuNum}
+          currentScreen={currentScreen}
+        />
         {/* Gameboy bottom control section */}
         <Col className="gameboy-inner-bottom">
           <Row className="px-3" style={{ height: "60%" }}>
@@ -70,10 +98,16 @@ export default function GameBoy() {
             </Col>
             {/* A and B buttons section */}
             <Col className="col-5 d-flex flex-column justify-content-center">
-              <Button className="play-btns btn-secondary d-flex justify-content-center align-items-center shadow ms-auto">
+              <Button
+                className="play-btns btn-secondary d-flex justify-content-center align-items-center shadow ms-auto"
+                onClick={handleAButtonClick}
+              >
                 <img src={A} alt="" width="20px" />
               </Button>
-              <Button className="play-btns btn-secondary d-flex justify-content-center align-items-center shadow">
+              <Button
+                className="play-btns btn-secondary d-flex justify-content-center align-items-center shadow"
+                onClick={handleBButtonClick}
+              >
                 <img src={B} alt="" width="20px" />
               </Button>
             </Col>
