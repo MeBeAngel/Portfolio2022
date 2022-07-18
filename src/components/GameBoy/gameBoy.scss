@@ -7,6 +7,9 @@
     height: 100%;
     max-width: 375px;
     max-height: 675px;
+    background-color: #212529;
+    background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 
     .gameboy-inner-top {
       height: 55%;
@@ -17,6 +20,24 @@
         background-repeat: no-repeat;
         border-radius: 20px; 
         background-color: #9bbc0f;
+        background-image: url("https://www.transparenttextures.com/patterns/dark-denim-3.png");
+        /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+
+        @keyframes zoom-title {
+          0%    {zoom: 100%;}
+          25%   {zoom: 110%;}
+          50%   {zoom: 120%;}
+          75%   {zoom: 110%;}
+          100%  {zoom: 100%;}
+        }
+
+        h1 {
+          font-weight: bold;
+          text-shadow: 3px 3px #191919;
+          animation-name: zoom-title;
+          animation-duration: 2s;
+          animation-iteration-count: infinite;
+        }
       }
     }
     .gameboy-inner-bottom {
