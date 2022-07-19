@@ -5,17 +5,21 @@
   .gameboy-shell {
     width: 100%;
     height: 100%;
-    max-width: 375px;
-    max-height: 675px;
-    border-radius: 25px;
+    //max-width: 375px;
+    //max-height: 675px;
+    //border-radius: 25px;
     background-color: #212529;
     background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 
     .gameboy-inner-top {
       height: 55%;
+      max-width: 375px;
+      max-height: 375px;
+        margin: 0 auto 0 auto;
 
       .gameboy-inner-top__screen {
+        
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -42,6 +46,9 @@
       }
     }
     .gameboy-inner-bottom {
+      max-width: 375px;
+      max-height: 375px;
+      margin: 0 auto 0 auto;
       .d-pad {
         position: relative;
         width: 100%;
