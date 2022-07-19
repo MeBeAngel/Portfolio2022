@@ -57,7 +57,8 @@
           position: absolute;
           top: 50%;
           left: 50%;
-          width: 90px; 
+          width: 110px;
+          height: 45px;
           transform: translate(-50%, -50%);
           border-radius: 5px;
         }
@@ -65,15 +66,15 @@
           position: absolute;
           top: 50%;
           left: 50%;
-          width: 35px; 
-          height: 90px;
+          width: 45px; 
+          height: 110px;
           transform: translate(-50%, -50%);
           border-radius: 5px;
         }
       }
       .play-btns {
-        width: 50px;
-        height: 50px;
+        width: 65px;
+        height: 65px;
         border-radius: 50%;
       }
     }

@@ -74,10 +74,10 @@ export default function GameBoy() {
               <div className="d-pad">
                 <div className="horizontal-btn bg-secondary d-flex justify-content-between align-items-center shadow p-2">
                   <Button className="p-0 bg-secondary border-0 d-flex justify-content-between align-items-center">
-                    <img src={Left} alt="" width="10px" />
+                    <img src={Left} alt="" width="12px" />
                   </Button>
                   <Button className="p-0 bg-secondary border-0 d-flex justify-content-between align-items-center">
-                    <img src={Right} alt="" width="10px" />
+                    <img src={Right} alt="" width="12px" />
                   </Button>
                 </div>
                 <div className="vertical-btn bg-secondary d-flex flex-column justify-content-between align-items-center p-2">
@@ -85,13 +85,13 @@ export default function GameBoy() {
                     className="p-0 bg-secondary border-0 d-flex justify-content-between align-items-center"
                     onClick={handleUpClick}
                   >
-                    <img src={Up} alt="" width="13px" />
+                    <img src={Up} alt="" width="15px" />
                   </Button>
                   <Button
                     className="p-0 bg-secondary border-0 d-flex justify-content-between align-items-center"
                     onClick={handleDownClick}
                   >
-                    <img src={Down} alt="" width="13px" />
+                    <img src={Down} alt="" width="15px" />
                   </Button>
                 </div>
               </div>
