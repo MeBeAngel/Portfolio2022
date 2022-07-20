@@ -7,7 +7,12 @@ import ResumeScreen from "./ResumeScreen/ResumeScreen";
 import ContactScreen from "./ContactScreen/ContactScreen";
 import { Row, Col } from "react-bootstrap";
 
-export default function Screen({ startBtnClicked, menuNum, currentScreen }) {
+export default function Screen({
+  startBtnClicked,
+  menuNum,
+  currentScreen,
+  contactSlideNum
+}) {
   return (
     <Col className="gameboy-inner-top p-4">
       <Row className="p-0 m-0" style={{ width: "100%", height: "100%" }}>
@@ -16,7 +21,11 @@ export default function Screen({ startBtnClicked, menuNum, currentScreen }) {
         {currentScreen === "about" ? <AboutScreen /> : ""}
         {currentScreen === "projects" ? <ProjectsScreen /> : ""}
         {currentScreen === "resume" ? <ResumeScreen /> : ""}
-        {currentScreen === "contact" ? <ContactScreen /> : ""}
+        {currentScreen === "contact" ? (
+          <ContactScreen contactSlideNum={contactSlideNum} />
+        ) : (
+          ""
+        )}
       </Row>
     </Col>
   );
