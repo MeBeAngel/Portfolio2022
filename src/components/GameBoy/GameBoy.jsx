@@ -8,38 +8,46 @@ import Up from "../../assets/caret-up.svg";
 import Down from "../../assets/caret-down.svg";
 import Left from "../../assets/caret-left.svg";
 import Right from "../../assets/caret-right.svg";
-import CursorSound from "../../assets/audio/cursor-sound.mp3";
+import PressSound from "../../assets/audio/press.wav";
+import ClickSound from "../../assets/audio/click.ogg";
 
 export default function GameBoy() {
   const [startBtnClicked, setStartBtnClicked] = useState(false);
   const [menuNum, setMenuNum] = useState(3);
   const [contactSlideNum, setContactSlideNum] = useState(0);
   const [currentScreen, setCurrentScreen] = useState("start");
-  const [play] = useSound(CursorSound);
+  const [playClick] = useSound(ClickSound);
+  const [playPress] = useSound(PressSound);
 
   const handleStartBtnClick = () => {
     if (!startBtnClicked) {
       setStartBtnClicked(true);
       setCurrentScreen("menu");
     }
+    playPress();
+  };
+
+  const handleSelectBtnClick = () => {
+    playPress();
   };
 
   const handleUpClick = () => {
     if (startBtnClicked && currentScreen === "menu") {
       if (menuNum < 3) {
         setMenuNum(menuNum + 1);
-        play();
       }
     }
+    playClick();
   };
 
   const handleDownClick = () => {
     if (startBtnClicked && currentScreen === "menu") {
       if (menuNum > 0) {
         setMenuNum(menuNum - 1);
-        play();
+        playClick();
       }
     }
+    playClick();
   };
 
   const handleRightBtn = () => {
@@ -48,6 +56,7 @@ export default function GameBoy() {
         setContactSlideNum(contactSlideNum + 1);
       }
     }
+    playClick();
   };
 
   const handleLeftBtn = () => {
@@ -56,25 +65,32 @@ export default function GameBoy() {
         setContactSlideNum(contactSlideNum - 1);
       }
     }
+    playClick();
   };
 
   const handleAButtonClick = () => {
-    if (menuNum === 3 && currentScreen === "menu") {
-      setCurrentScreen("about");
+    if (startBtnClicked && currentScreen === "menu") {
+      if (menuNum === 3) {
+        setCurrentScreen("about");
+      }
+      if (menuNum === 2) {
+        setCurrentScreen("projects");
+      }
+      if (menuNum === 1) {
+        setCurrentScreen("resume");
+      }
+      if (menuNum === 0) {
+        setCurrentScreen("contact");
+      }
     }
-    if (menuNum === 2 && currentScreen === "menu") {
-      setCurrentScreen("projects");
-    }
-    if (menuNum === 1 && currentScreen === "menu") {
-      setCurrentScreen("resume");
-    }
-    if (menuNum === 0 && currentScreen === "menu") {
-      setCurrentScreen("contact");
-    }
+    playPress();
   };
 
   const handleBButtonClick = () => {
-    setCurrentScreen("menu");
+    if (startBtnClicked) {
+      setCurrentScreen("menu");
+    }
+    playPress();
   };
 
   return (
@@ -149,7 +165,10 @@ export default function GameBoy() {
                 className="text-center me-4"
                 style={{ transform: "rotate(-25deg)" }}
               >
-                <Button className="select-btn btn-light"></Button>
+                <Button
+                  className="select-btn btn-light"
+                  onClick={handleSelectBtnClick}
+                ></Button>
                 <p className="select-text m-0 text-danger">SELECT</p>
               </div>
               <div
