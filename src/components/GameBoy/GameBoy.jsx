@@ -86,7 +86,7 @@ export default function GameBoy() {
             {/* Directional buttons section */}
             <Col className="col-5 me-auto p-0">
               <div className="d-pad">
-                <div className="horizontal-btn bg-light d-flex justify-content-between align-items-center shadow p-2">
+                <div className="horizontal-btn bg-light d-flex justify-content-between align-items-center p-2">
                   <Button
                     className="p-0 bg-light border-0 d-flex justify-content-between align-items-center"
                     onClick={handleLeftBtn}
@@ -119,13 +119,13 @@ export default function GameBoy() {
             {/* A and B buttons section */}
             <Col className="col-5 d-flex flex-column justify-content-center">
               <Button
-                className="play-btns btn-light d-flex justify-content-center align-items-center shadow ms-auto"
+                className="play-btns btn-light d-flex justify-content-center align-items-center ms-auto"
                 onClick={handleAButtonClick}
               >
                 <img src={A} alt="" width="20px" />
               </Button>
               <Button
-                className="play-btns btn-light d-flex justify-content-center align-items-center shadow"
+                className="play-btns btn-light d-flex justify-content-center align-items-center"
                 onClick={handleBButtonClick}
               >
                 <img src={B} alt="" width="20px" />
@@ -139,18 +139,18 @@ export default function GameBoy() {
                 className="text-center me-4"
                 style={{ transform: "rotate(-25deg)" }}
               >
-                <Button className="select-btn btn-light shadow"></Button>
-                <p className="m-0 text-danger">Select</p>
+                <Button className="select-btn btn-light"></Button>
+                <p className="select-text m-0 text-danger">SELECT</p>
               </div>
               <div
                 className="text-center"
                 style={{ transform: "rotate(-25deg)" }}
               >
                 <Button
-                  className="start-btn btn-light shadow"
+                  className="start-btn btn-light"
                   onClick={handleStartBtnClick}
                 ></Button>
-                <p className="m-0 text-danger">Start</p>
+                <p className="start-text m-0 text-danger">START</p>
               </div>
             </Col>
           </Row>

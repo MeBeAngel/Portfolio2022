@@ -19,14 +19,12 @@
         margin: 0 auto 0 auto;
 
       .gameboy-inner-top__screen {
-        
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         border-radius: 20px; 
         background-color: #9bbc0f;
-        background-image: url("https://www.transparenttextures.com/patterns/dark-denim-3.png");
-        /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+        box-shadow: rgb(0, 0, 0, 0.8) 3px 3px 14px 0px inset, rgba(0, 0, 0, 0.5) -3px -3px 14px 1px inset;
 
         @keyframes zoom-title {
           0%    {zoom: 100%;}
@@ -61,6 +59,7 @@
           height: 45px;
           transform: translate(-50%, -50%);
           border-radius: 5px;
+          box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 8px 3px;
         }
         .vertical-btn {
           position: absolute;
@@ -70,12 +69,14 @@
           height: 110px;
           transform: translate(-50%, -50%);
           border-radius: 5px;
+          box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 8px 3px;
         }
       }
       .play-btns {
         width: 65px;
         height: 65px;
         border-radius: 50%;
+        box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 8px 2px;
       }
     }
     .start-and-select-btn-section {
@@ -83,11 +84,19 @@
         width: 50px;
         height: 10px;
         border-radius: 10px;
+        box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 8px 1px;
+      }
+      .select-text {
+        font-weight: bold;
       }
       .start-btn {
         width: 50px;
         height: 10px;
         border-radius: 10px;
+        box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 8px 1px;
+      }
+      .start-text {
+        font-weight: bold;
       }
     }
   }
