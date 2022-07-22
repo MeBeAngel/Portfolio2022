@@ -86,29 +86,29 @@ export default function GameBoy() {
             {/* Directional buttons section */}
             <Col className="col-5 me-auto p-0">
               <div className="d-pad">
-                <div className="horizontal-btn bg-secondary d-flex justify-content-between align-items-center shadow p-2">
+                <div className="horizontal-btn bg-light d-flex justify-content-between align-items-center shadow p-2">
                   <Button
-                    className="p-0 bg-secondary border-0 d-flex justify-content-between align-items-center"
+                    className="p-0 bg-light border-0 d-flex justify-content-between align-items-center"
                     onClick={handleLeftBtn}
                   >
                     <img src={Left} alt="" width="12px" />
                   </Button>
                   <Button
-                    className="p-0 bg-secondary border-0 d-flex justify-content-between align-items-center"
+                    className="p-0 bg-light border-0 d-flex justify-content-between align-items-center"
                     onClick={handleRightBtn}
                   >
                     <img src={Right} alt="" width="12px" />
                   </Button>
                 </div>
-                <div className="vertical-btn bg-secondary d-flex flex-column justify-content-between align-items-center p-2">
+                <div className="vertical-btn bg-light d-flex flex-column justify-content-between align-items-center p-2">
                   <Button
-                    className="p-0 bg-secondary border-0 d-flex justify-content-between align-items-center"
+                    className="p-0 bg-light border-0 d-flex justify-content-between align-items-center"
                     onClick={handleUpClick}
                   >
                     <img src={Up} alt="" width="15px" />
                   </Button>
                   <Button
-                    className="p-0 bg-secondary border-0 d-flex justify-content-between align-items-center"
+                    className="p-0 bg-light border-0 d-flex justify-content-between align-items-center"
                     onClick={handleDownClick}
                   >
                     <img src={Down} alt="" width="15px" />
@@ -119,13 +119,13 @@ export default function GameBoy() {
             {/* A and B buttons section */}
             <Col className="col-5 d-flex flex-column justify-content-center">
               <Button
-                className="play-btns btn-secondary d-flex justify-content-center align-items-center shadow ms-auto"
+                className="play-btns btn-light d-flex justify-content-center align-items-center shadow ms-auto"
                 onClick={handleAButtonClick}
               >
                 <img src={A} alt="" width="20px" />
               </Button>
               <Button
-                className="play-btns btn-secondary d-flex justify-content-center align-items-center shadow"
+                className="play-btns btn-light d-flex justify-content-center align-items-center shadow"
                 onClick={handleBButtonClick}
               >
                 <img src={B} alt="" width="20px" />
@@ -139,7 +139,7 @@ export default function GameBoy() {
                 className="text-center me-4"
                 style={{ transform: "rotate(-25deg)" }}
               >
-                <Button className="select-btn btn-secondary shadow"></Button>
+                <Button className="select-btn btn-light shadow"></Button>
                 <p className="m-0 text-danger">Select</p>
               </div>
               <div
@@ -147,7 +147,7 @@ export default function GameBoy() {
                 style={{ transform: "rotate(-25deg)" }}
               >
                 <Button
-                  className="start-btn btn-secondary shadow"
+                  className="start-btn btn-light shadow"
                   onClick={handleStartBtnClick}
                 ></Button>
                 <p className="m-0 text-danger">Start</p>
