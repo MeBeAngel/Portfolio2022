@@ -18,33 +18,43 @@ export default function GameBoy() {
   const [play] = useSound(CursorSound);
 
   const handleStartBtnClick = () => {
-    setStartBtnClicked(true);
-    setCurrentScreen("menu");
+    if (!startBtnClicked) {
+      setStartBtnClicked(true);
+      setCurrentScreen("menu");
+    }
   };
 
   const handleUpClick = () => {
-    if (menuNum < 3 && startBtnClicked && currentScreen === "menu") {
-      setMenuNum(menuNum + 1);
-      play();
+    if (startBtnClicked && currentScreen === "menu") {
+      if (menuNum < 3) {
+        setMenuNum(menuNum + 1);
+        play();
+      }
     }
   };
 
   const handleDownClick = () => {
-    if (menuNum > 0 && startBtnClicked && currentScreen === "menu") {
-      setMenuNum(menuNum - 1);
-      play();
+    if (startBtnClicked && currentScreen === "menu") {
+      if (menuNum > 0) {
+        setMenuNum(menuNum - 1);
+        play();
+      }
     }
   };
 
   const handleRightBtn = () => {
-    if (contactSlideNum < 3 && startBtnClicked && currentScreen === "contact") {
-      setContactSlideNum(contactSlideNum + 1);
+    if (startBtnClicked && currentScreen === "contact") {
+      if (contactSlideNum < 3) {
+        setContactSlideNum(contactSlideNum + 1);
+      }
     }
   };
 
   const handleLeftBtn = () => {
-    if (contactSlideNum > 0 && startBtnClicked && currentScreen === "contact") {
-      setContactSlideNum(contactSlideNum - 1);
+    if (startBtnClicked && currentScreen === "contact") {
+      if (contactSlideNum > 0) {
+        setContactSlideNum(contactSlideNum - 1);
+      }
     }
   };
 
