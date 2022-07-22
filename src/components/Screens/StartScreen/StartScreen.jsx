@@ -1,6 +1,6 @@
 import React from "react";
 import { Col } from "react-bootstrap";
-import Angel from "../../../assets/AngelGameboy.png";
+import Angel from "../../../assets/Angel-dark.png";
 
 export default function StartScreen() {
   return (

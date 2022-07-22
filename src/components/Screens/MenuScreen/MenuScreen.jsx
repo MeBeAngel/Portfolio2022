@@ -8,7 +8,7 @@ export default function MenuScreen({ menuNum }) {
       <div className="menu">
         <div className="menu-item">
           <span>
-            <h2 className="text-light">ABOUT</h2>
+            <h2 className="text-secondary">ABOUT</h2>
             {menuNum === 3 ? (
               <img className="menu-cursor" src={Cursor} alt="" />
             ) : (
@@ -18,7 +18,7 @@ export default function MenuScreen({ menuNum }) {
         </div>
         <div className="menu-item">
           <span>
-            <h2 className="text-light">PROJECTS</h2>
+            <h2 className="text-secondary">PROJECTS</h2>
             {menuNum === 2 ? (
               <img className="menu-cursor" src={Cursor} alt="" />
             ) : (
@@ -28,7 +28,7 @@ export default function MenuScreen({ menuNum }) {
         </div>
         <div className="menu-item">
           <span>
-            <h2 className="text-light">RESUME</h2>
+            <h2 className="text-secondary">RESUME</h2>
             {menuNum === 1 ? (
               <img className="menu-cursor" src={Cursor} alt="" />
             ) : (
@@ -38,7 +38,7 @@ export default function MenuScreen({ menuNum }) {
         </div>
         <div className="menu-item">
           <span>
-            <h2 className="text-light">CONTACT</h2>
+            <h2 className="text-secondary">CONTACT</h2>
             {menuNum === 0 ? (
               <img className="menu-cursor" src={Cursor} alt="" />
             ) : (

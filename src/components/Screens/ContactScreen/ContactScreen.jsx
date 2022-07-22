@@ -14,7 +14,7 @@ export default function ContactScreen({ contactSlideNum }) {
   };
 
   return (
-    <Col className="gameboy-inner-top__screen d-flex flex-column justify-content-center align-items-center text-light">
+    <Col className="gameboy-inner-top__screen d-flex flex-column justify-content-center align-items-center text-secondary">
       <Form>
         {contactSlideNum === 0 && (
           <Form.Group className="form-question mb-3" controlId="name">
