@@ -11,7 +11,8 @@ export default function Screen({
   startBtnClicked,
   menuNum,
   currentScreen,
-  contactSlideNum
+  contactSlideNum,
+  projectSlideNum
 }) {
   return (
     <Col className="gameboy-inner-top p-4">
@@ -19,7 +20,11 @@ export default function Screen({
         {!startBtnClicked ? <StartScreen /> : ""}
         {currentScreen === "menu" ? <MenuScreen menuNum={menuNum} /> : ""}
         {currentScreen === "about" ? <AboutScreen /> : ""}
-        {currentScreen === "projects" ? <ProjectsScreen /> : ""}
+        {currentScreen === "projects" ? (
+          <ProjectsScreen projectSlideNum={projectSlideNum} />
+        ) : (
+          ""
+        )}
         {currentScreen === "resume" ? <ResumeScreen /> : ""}
         {currentScreen === "contact" ? (
           <ContactScreen contactSlideNum={contactSlideNum} />

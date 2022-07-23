@@ -15,6 +15,7 @@ export default function GameBoy() {
   const [startBtnClicked, setStartBtnClicked] = useState(false);
   const [menuNum, setMenuNum] = useState(3);
   const [contactSlideNum, setContactSlideNum] = useState(0);
+  const [projectSlideNum, setProjectSlideNum] = useState(0);
   const [currentScreen, setCurrentScreen] = useState("start");
   const [playClick] = useSound(ClickSound);
   const [playPress] = useSound(PressSound);
@@ -56,6 +57,11 @@ export default function GameBoy() {
         setContactSlideNum(contactSlideNum + 1);
       }
     }
+    if (startBtnClicked && currentScreen === "projects") {
+      if (projectSlideNum < 2) {
+        setProjectSlideNum(projectSlideNum + 1);
+      }
+    }
     playClick();
   };
 
@@ -63,6 +69,11 @@ export default function GameBoy() {
     if (startBtnClicked && currentScreen === "contact") {
       if (contactSlideNum > 0) {
         setContactSlideNum(contactSlideNum - 1);
+      }
+    }
+    if (startBtnClicked && currentScreen === "projects") {
+      if (projectSlideNum > 0) {
+        setProjectSlideNum(projectSlideNum - 1);
       }
     }
     playClick();
@@ -89,6 +100,8 @@ export default function GameBoy() {
   const handleBButtonClick = () => {
     if (startBtnClicked) {
       setCurrentScreen("menu");
+      setContactSlideNum(0);
+      setProjectSlideNum(0);
     }
     playPress();
   };
@@ -105,6 +118,7 @@ export default function GameBoy() {
           menuNum={menuNum}
           currentScreen={currentScreen}
           contactSlideNum={contactSlideNum}
+          projectSlideNum={projectSlideNum}
         />
         {/* Gameboy bottom control section */}
         <Col className="gameboy-inner-bottom">

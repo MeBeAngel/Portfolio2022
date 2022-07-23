@@ -19,6 +19,7 @@
         margin: 0 auto 0 auto;
 
       .gameboy-inner-top__screen {
+        position: relative;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -40,6 +41,17 @@
           animation-name: zoom-title;
           animation-duration: 2s;
           animation-iteration-count: infinite;
+        }
+
+        .left-arrow {
+          position: absolute;
+          top: 50%;
+          left: 10px;
+        }
+        .right-arrow {
+          position: absolute;
+          top: 50%;
+          right: 10px;
         }
       }
     }

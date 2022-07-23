@@ -4,11 +4,13 @@ import { Col } from "react-bootstrap";
 export default function AboutScreen() {
   return (
     <Col className="gameboy-inner-top__screen d-flex flex-column justify-content-center align-items-center text-center text-secondary">
+      <h3>HI, I'm Angel!</h3>
       <p>
-        Right, Crocubot. So, you're half cold unfeeling reptile, half also cold
-        equally unfeeling machine? Listen to your sister Morty; to live is to
-        risk it all; otherwise you're just an inert chunk of randomly assembled
-        molecules drifting wherever the universe blows you.
+        I'm a Jr. Software engineer with the ability to learn and collaborate in
+        rapidly changing environments. I Worked through hundreds of hours of
+        bootcamp structure, learning JavaScript, React.Js, Node.Js, and MongoDB.
+        Whenever I'm not coding, I'm probably playing video games, writing or
+        reading a good book.
       </p>
     </Col>
   );
