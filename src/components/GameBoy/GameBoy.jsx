@@ -101,7 +101,7 @@ export default function GameBoy() {
     }
     if (
       startBtnClicked &&
-      currentScreen === "contact" &&
+      currentScreen === "contact" && contactSlideNum === 3 &&
       inputField.name &&
       inputField.email &&
       inputField.message
@@ -187,7 +187,7 @@ export default function GameBoy() {
               <Button
                 className="play-btns btn-light d-flex justify-content-center align-items-center ms-auto"
                 onClick={handleAButtonClick}
-                type="submit"
+                type={currentScreen === "contact" && contactSlideNum === 3 ? "submit" : ""}
               >
                 <img src={A} alt="" width="20px" />
               </Button>
