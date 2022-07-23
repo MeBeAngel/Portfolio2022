@@ -1,6 +1,9 @@
 import React from "react";
 import { Col } from "react-bootstrap";
 import Cursor from "../../../assets/Cursor.png";
+import Linkedin from "../../../assets/linkedin.svg";
+import Github from "../../../assets/github-red.svg";
+import CodeSandbox from "../../../assets/code-sandbox.svg";
 
 export default function MenuScreen({ menuNum }) {
   return (
@@ -45,6 +48,17 @@ export default function MenuScreen({ menuNum }) {
               ""
             )}
           </span>
+        </div>
+        <div className="menu-item">
+          <a href="www.github.com" target="_blank">
+            <img src={Github} alt="" width="35px" />
+          </a>
+          <a className="mx-3" href="www.linkedin.com" target="_blank">
+            <img src={Linkedin} alt="" width="35px" />
+          </a>
+          <a href="www.codesandbox.com" target="_blank">
+            <img src={CodeSandbox} alt="" width="35px" />
+          </a>
         </div>
       </div>
     </Col>

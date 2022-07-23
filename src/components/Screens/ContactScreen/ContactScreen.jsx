@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Form, Button } from "react-bootstrap";
+import { Col, Form } from "react-bootstrap";
 import RightArrow from "../../../assets/caret-right.svg";
 
 export default function ContactScreen({
@@ -73,7 +73,7 @@ export default function ContactScreen({
         )}
         {contactSlideNum === 3 && (
           <div className="text-center">
-            <p className="form-question">Press A button</p>
+            <p className="form-question">Press A button to contact</p>
           </div>
         )}
       </Form>
