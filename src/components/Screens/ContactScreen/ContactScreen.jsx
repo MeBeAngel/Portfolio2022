@@ -1,21 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import { Col, Form, Button } from "react-bootstrap";
 import RightArrow from "../../../assets/caret-right.svg";
 
-export default function ContactScreen({ contactSlideNum }) {
-  const [inputField, setInputField] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
-
+export default function ContactScreen({
+  contactSlideNum,
+  handleSubmit,
+  setInputField,
+  inputField
+}) {
   const handleChange = (e) => {
     setInputField({ ...inputField, [e.target.name]: e.target.value.trim() });
   };
 
   return (
     <Col className="gameboy-inner-top__screen d-flex flex-column justify-content-center align-items-center text-secondary">
-      <Form>
+      <Form id="contact-form" action="" onSubmit={handleSubmit}>
         {contactSlideNum === 0 && (
           <Form.Group className="form-question mb-3" controlId="name">
             <Form.Label>What may I call you?</Form.Label>
@@ -74,10 +73,7 @@ export default function ContactScreen({ contactSlideNum }) {
         )}
         {contactSlideNum === 3 && (
           <div className="text-center">
-            <p>Just click that button</p>
-            <Button variant="warning" type="submit">
-              Submit
-            </Button>
+            <p className="form-question">Press A button</p>
           </div>
         )}
       </Form>

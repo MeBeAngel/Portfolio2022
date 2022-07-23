@@ -19,6 +19,11 @@ export default function GameBoy() {
   const [currentScreen, setCurrentScreen] = useState("start");
   const [playClick] = useSound(ClickSound);
   const [playPress] = useSound(PressSound);
+  const [inputField, setInputField] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
 
   const handleStartBtnClick = () => {
     if (!startBtnClicked) {
@@ -79,7 +84,7 @@ export default function GameBoy() {
     playClick();
   };
 
-  const handleAButtonClick = () => {
+  const handleAButtonClick = (e) => {
     if (startBtnClicked && currentScreen === "menu") {
       if (menuNum === 3) {
         setCurrentScreen("about");
@@ -94,6 +99,18 @@ export default function GameBoy() {
         setCurrentScreen("contact");
       }
     }
+    if (
+      startBtnClicked &&
+      currentScreen === "contact" &&
+      inputField.name &&
+      inputField.email &&
+      inputField.message
+    ) {
+      e.preventDefault();
+      console.log(inputField);
+      setCurrentScreen("menu");
+      handleSubmit();
+    }
     playPress();
   };
 
@@ -104,6 +121,12 @@ export default function GameBoy() {
       setProjectSlideNum(0);
     }
     playPress();
+  };
+
+  const handleSubmit = () => {
+    console.log("form sent");
+    setInputField({ name: "", email: "", message: "" });
+    setContactSlideNum(0);
   };
 
   return (
@@ -119,6 +142,9 @@ export default function GameBoy() {
           currentScreen={currentScreen}
           contactSlideNum={contactSlideNum}
           projectSlideNum={projectSlideNum}
+          handleSubmit={handleSubmit}
+          setInputField={setInputField}
+          inputField={inputField}
         />
         {/* Gameboy bottom control section */}
         <Col className="gameboy-inner-bottom">
@@ -161,6 +187,7 @@ export default function GameBoy() {
               <Button
                 className="play-btns btn-light d-flex justify-content-center align-items-center ms-auto"
                 onClick={handleAButtonClick}
+                type="submit"
               >
                 <img src={A} alt="" width="20px" />
               </Button>
