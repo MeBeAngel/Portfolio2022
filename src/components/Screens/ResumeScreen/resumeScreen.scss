@@ -1,0 +1,41 @@
+.resume-screen {
+  .contact-info-section {
+    p {
+      font-style: italic;
+    }
+  }
+  .skills-section {
+    p {
+      font-style: italic;
+    }
+  }
+  .experience-section {
+    h6 {
+      font-style: italic;
+    }
+    p, li {
+      font-size: 12px;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 10px;
+    }
+    ul li:before {
+      content: '\2022 ';
+      color: #dc3545;
+      padding-right: 3px;
+    }
+  }
+  .education-section {
+    .sub {
+      font-size: 13px;
+      font-style: italic;
+    }
+  }
+  .download-resume-section {
+    button {
+      font-size: 25px;
+      font-weight: bold;
+    }
+  }
+}

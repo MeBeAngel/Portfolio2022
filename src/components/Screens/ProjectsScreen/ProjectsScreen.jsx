@@ -8,7 +8,7 @@ export default function ProjectsScreen({ projectSlideNum }) {
   return (
     <Col className="gameboy-inner-top__screen d-flex justify-content-center align-items-center w-100">
       {projectSlideNum > 0 && (
-        <img className="left-arrow" src={LeftArrow} alt="" width="10px" />
+        <img className="prev-arrow" src={LeftArrow} alt="" width="10px" />
       )}
       {projectSlideNum === 0 && (
         <ProjectItem
@@ -39,7 +39,7 @@ export default function ProjectsScreen({ projectSlideNum }) {
         />
       )}
       {projectSlideNum < 2 && (
-        <img className="right-arrow" src={RightArrow} alt="" width="10px" />
+        <img className="next-arrow" src={RightArrow} alt="" width="10px" />
       )}
     </Col>
   );

@@ -16,6 +16,7 @@ export default function GameBoy() {
   const [menuNum, setMenuNum] = useState(3);
   const [contactSlideNum, setContactSlideNum] = useState(0);
   const [projectSlideNum, setProjectSlideNum] = useState(0);
+  const [resumeSlideNum, setResumeSlideNum] = useState(0);
   const [currentScreen, setCurrentScreen] = useState("start");
   const [playClick] = useSound(ClickSound);
   const [playPress] = useSound(PressSound);
@@ -37,7 +38,7 @@ export default function GameBoy() {
     playPress();
   };
 
-  const handleUpClick = () => {
+  const handleUpBtn = () => {
     if (startBtnClicked && currentScreen === "menu") {
       if (menuNum < 3) {
         setMenuNum(menuNum + 1);
@@ -46,7 +47,7 @@ export default function GameBoy() {
     playClick();
   };
 
-  const handleDownClick = () => {
+  const handleDownBtn = () => {
     if (startBtnClicked && currentScreen === "menu") {
       if (menuNum > 0) {
         setMenuNum(menuNum - 1);
@@ -67,6 +68,11 @@ export default function GameBoy() {
         setProjectSlideNum(projectSlideNum + 1);
       }
     }
+    if (startBtnClicked && currentScreen === "resume") {
+      if (resumeSlideNum < 4) {
+        setResumeSlideNum(resumeSlideNum + 1);
+      }
+    }
     playClick();
   };
 
@@ -79,6 +85,11 @@ export default function GameBoy() {
     if (startBtnClicked && currentScreen === "projects") {
       if (projectSlideNum > 0) {
         setProjectSlideNum(projectSlideNum - 1);
+      }
+    }
+    if (startBtnClicked && currentScreen === "resume") {
+      if (resumeSlideNum > 0) {
+        setResumeSlideNum(resumeSlideNum - 1);
       }
     }
     playClick();
@@ -101,7 +112,8 @@ export default function GameBoy() {
     }
     if (
       startBtnClicked &&
-      currentScreen === "contact" && contactSlideNum === 3 &&
+      currentScreen === "contact" &&
+      contactSlideNum === 3 &&
       inputField.name &&
       inputField.email &&
       inputField.message
@@ -142,6 +154,7 @@ export default function GameBoy() {
           currentScreen={currentScreen}
           contactSlideNum={contactSlideNum}
           projectSlideNum={projectSlideNum}
+          resumeSlideNum={resumeSlideNum}
           handleSubmit={handleSubmit}
           setInputField={setInputField}
           inputField={inputField}
@@ -169,13 +182,13 @@ export default function GameBoy() {
                 <div className="vertical-btn bg-light d-flex flex-column justify-content-between align-items-center p-2">
                   <Button
                     className="p-0 bg-light border-0 d-flex justify-content-between align-items-center"
-                    onClick={handleUpClick}
+                    onClick={handleUpBtn}
                   >
                     <img src={Up} alt="" width="15px" />
                   </Button>
                   <Button
                     className="p-0 bg-light border-0 d-flex justify-content-between align-items-center"
-                    onClick={handleDownClick}
+                    onClick={handleDownBtn}
                   >
                     <img src={Down} alt="" width="15px" />
                   </Button>
@@ -187,7 +200,11 @@ export default function GameBoy() {
               <Button
                 className="play-btns btn-light d-flex justify-content-center align-items-center ms-auto"
                 onClick={handleAButtonClick}
-                type={currentScreen === "contact" && contactSlideNum === 3 ? "submit" : ""}
+                type={
+                  currentScreen === "contact" && contactSlideNum === 3
+                    ? "submit"
+                    : ""
+                }
               >
                 <img src={A} alt="" width="20px" />
               </Button>

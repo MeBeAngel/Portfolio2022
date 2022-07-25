@@ -16,7 +16,7 @@
       height: 55%;
       max-width: 375px;
       max-height: 375px;
-        margin: 0 auto 0 auto;
+      margin: 0 auto 0 auto;
 
       .gameboy-inner-top__screen {
         position: relative;
@@ -43,12 +43,12 @@
           animation-iteration-count: infinite;
         }
 
-        .left-arrow {
+        .prev-arrow {
           position: absolute;
           top: 50%;
           left: 10px;
         }
-        .right-arrow {
+        .next-arrow {
           position: absolute;
           top: 50%;
           right: 10px;

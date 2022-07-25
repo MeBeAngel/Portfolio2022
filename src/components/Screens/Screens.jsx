@@ -13,6 +13,7 @@ export default function Screen({
   currentScreen,
   contactSlideNum,
   projectSlideNum,
+  resumeSlideNum,
   handleSubmit,
   setInputField,
   inputField
@@ -28,7 +29,11 @@ export default function Screen({
         ) : (
           ""
         )}
-        {currentScreen === "resume" ? <ResumeScreen /> : ""}
+        {currentScreen === "resume" ? (
+          <ResumeScreen resumeSlideNum={resumeSlideNum} />
+        ) : (
+          ""
+        )}
         {currentScreen === "contact" ? (
           <ContactScreen
             contactSlideNum={contactSlideNum}
