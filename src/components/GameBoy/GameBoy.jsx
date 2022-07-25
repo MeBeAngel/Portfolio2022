@@ -8,8 +8,8 @@ import Up from "../../assets/caret-up.svg";
 import Down from "../../assets/caret-down.svg";
 import Left from "../../assets/caret-left.svg";
 import Right from "../../assets/caret-right.svg";
-import PressSound from "../../assets/audio/press.wav";
-import ClickSound from "../../assets/audio/click.ogg";
+import PressSound from "../../assets/audio/press.mp3";
+import ClickSound from "../../assets/audio/click.mp3";
 
 export default function GameBoy() {
   const [startBtnClicked, setStartBtnClicked] = useState(false);
