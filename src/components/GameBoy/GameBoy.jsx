@@ -64,7 +64,7 @@ export default function GameBoy() {
       }
     }
     if (startBtnClicked && currentScreen === "projects") {
-      if (projectSlideNum < 2) {
+      if (projectSlideNum < 4) {
         setProjectSlideNum(projectSlideNum + 1);
       }
     }
@@ -131,6 +131,7 @@ export default function GameBoy() {
       setCurrentScreen("menu");
       setContactSlideNum(0);
       setProjectSlideNum(0);
+      setResumeSlideNum(0);
     }
     playPress();
   };

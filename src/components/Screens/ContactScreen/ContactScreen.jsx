@@ -16,7 +16,10 @@ export default function ContactScreen({
     <Col className="gameboy-inner-top__screen d-flex flex-column justify-content-center align-items-center text-secondary">
       <Form id="contact-form" action="" onSubmit={handleSubmit}>
         {contactSlideNum === 0 && (
-          <Form.Group className="form-question mb-3" controlId="name">
+          <Form.Group
+            className="form-question text-danger mb-3"
+            controlId="name"
+          >
             <Form.Label>What may I call you?</Form.Label>
             <Form.Control
               className="shadow"
@@ -34,7 +37,10 @@ export default function ContactScreen({
           </Form.Group>
         )}
         {contactSlideNum === 1 && (
-          <Form.Group className="form-question mb-3" controlId="email">
+          <Form.Group
+            className="form-question text-danger mb-3"
+            controlId="email"
+          >
             <Form.Label>How may I reach you?</Form.Label>
             <Form.Control
               className="shadow"
@@ -52,7 +58,10 @@ export default function ContactScreen({
           </Form.Group>
         )}
         {contactSlideNum === 2 && (
-          <Form.Group className="form-question mb-3" controlId="message">
+          <Form.Group
+            className="form-question text-danger mb-3"
+            controlId="message"
+          >
             <Form.Label>How may I help you?</Form.Label>
             <Form.Control
               className="shadow"
@@ -73,7 +82,9 @@ export default function ContactScreen({
         )}
         {contactSlideNum === 3 && (
           <div className="text-center">
-            <p className="form-question">Press A button to contact</p>
+            <p className="form-question text-danger">
+              Press A button to contact
+            </p>
           </div>
         )}
       </Form>

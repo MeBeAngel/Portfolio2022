@@ -11,14 +11,16 @@ export default function ProjectItem({
   codesandbox
 }) {
   return (
-    <div className="project-item text-center text-secondary">
+    <div className="project-item text-center text-secondary px-3">
       <h3>{title}</h3>
       <p>{description}</p>
       <div className="project-item__links">
-        <a href={url} target="_blank" rel="noreferrer">
-          <img src={wwwLogo} alt="" width="40px" />
-        </a>
-        <a className="mx-3" href={github} target="_blank" rel="noreferrer">
+        {url && (
+          <a className="me-3" href={url} target="_blank" rel="noreferrer">
+            <img src={wwwLogo} alt="" width="40px" />
+          </a>
+        )}
+        <a className="me-3" href={github} target="_blank" rel="noreferrer">
           <img src={Github} alt="" width="40px" />
         </a>
         <a href={codesandbox} target="_blank" rel="noreferrer">

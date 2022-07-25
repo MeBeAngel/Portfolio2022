@@ -5,6 +5,7 @@ import Email from "../../../assets/email.svg";
 import Phone from "../../../assets/phone.svg";
 import NextArrow from "../../../assets/caret-right.svg";
 import PrevArrow from "../../../assets/caret-left.svg";
+import Resume from "../../../assets/Resume_2022.pdf";
 
 export default function ResumeScreen({ resumeSlideNum }) {
   return (
@@ -116,9 +117,16 @@ export default function ResumeScreen({ resumeSlideNum }) {
       {/* Resume slide #5 / Resume Download */}
       {resumeSlideNum === 4 && (
         <div className="download-resume-section d-flex flex-column text-center px-2">
-          <Button className="shadow btn-danger text-light py-4 px-2">
-            Download Resume
-          </Button>
+          <a
+            href={Resume}
+            download="Angel_Gonzalez_Resume"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Button className="shadow btn-danger text-light py-4 px-2">
+              Download Resume
+            </Button>
+          </a>
         </div>
       )}
     </Col>
