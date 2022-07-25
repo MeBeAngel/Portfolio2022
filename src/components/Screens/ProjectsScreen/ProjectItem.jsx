@@ -12,7 +12,7 @@ export default function ProjectItem({
 }) {
   return (
     <div className="project-item text-center text-secondary px-3">
-      <h3>{title}</h3>
+      <h3 className="text-danger">{title}</h3>
       <p>{description}</p>
       <div className="project-item__links">
         {url && (
