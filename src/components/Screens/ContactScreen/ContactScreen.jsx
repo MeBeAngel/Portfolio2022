@@ -13,8 +13,11 @@ export default function ContactScreen({
 
   return (
     <Col className="contact-screen gameboy-inner-top__screen d-flex flex-column justify-content-center align-items-center text-secondary">
+      {/* Title */}
       <h4 className="title text-danger mb-0">Let's Connect!</h4>
+
       <Form ref={formRef} id="contact-form" action="" onSubmit={handleSubmit}>
+        {/* Name Input */}
         <Form.Group
           className="form-question text-danger mb-3 visible"
           controlId="name"
@@ -29,6 +32,7 @@ export default function ContactScreen({
           />
         </Form.Group>
 
+        {/* Email Input */}
         <Form.Group
           className="form-question text-danger mb-3 visible"
           controlId="email"
@@ -43,6 +47,7 @@ export default function ContactScreen({
           />
         </Form.Group>
 
+        {/* Message Input */}
         <Form.Group
           className="form-question text-danger mb-3 visible"
           controlId="message"
@@ -59,6 +64,7 @@ export default function ContactScreen({
           />
         </Form.Group>
 
+        {/* Submit Message */}
         {inputField.user_name && inputField.user_email && inputField.message ? (
           <div className="submit-message text-center">
             <p className="text-danger">Press A to submit</p>
