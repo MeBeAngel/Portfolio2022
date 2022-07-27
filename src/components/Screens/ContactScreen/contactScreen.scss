@@ -1,18 +1,33 @@
-.form-question {
+.contact-screen {
   position: relative;
-  font-weight: bold;
 
-  input, textarea {
-    &::placeholder {
-      font-size: 15px;
-      color: #cccccc;
+  .title {
+    position: absolute;
+    top: 13px;
+    left: 50%;
+    transform: (translate(-50%, 0));
+  }
+
+  .contact-form {
+    .form-question {
+      font-weight: bold;
+
+      input,
+      textarea {
+        &::placeholder {
+          font-size: 15px;
+          color: gray;
+          opacity: 0.9;
+        }
+      }
     }
   }
-  .next-arrow {
+
+  .submit-message {
     position: absolute;
-    top: 50%;
-    right: -30px;
-    transform: translate(-50%);
-    width: 15px;
+    bottom: 13px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-weight: bold;
   }
 }

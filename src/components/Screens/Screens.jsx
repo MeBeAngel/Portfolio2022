@@ -11,12 +11,12 @@ export default function Screen({
   startBtnClicked,
   menuNum,
   currentScreen,
-  contactSlideNum,
   projectSlideNum,
   resumeSlideNum,
   handleSubmit,
   setInputField,
-  inputField
+  inputField,
+  formRef
 }) {
   return (
     <Col className="gameboy-inner-top p-4">
@@ -36,10 +36,10 @@ export default function Screen({
         )}
         {currentScreen === "contact" ? (
           <ContactScreen
-            contactSlideNum={contactSlideNum}
             handleSubmit={handleSubmit}
             setInputField={setInputField}
             inputField={inputField}
+            formRef={formRef}
           />
         ) : (
           ""

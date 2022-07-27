@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import emailjs from '@emailjs/browser';
 import { Container, Row, Col, Button } from "react-bootstrap";
 import useSound from "use-sound";
 import Screens from "../Screens/Screens";
@@ -14,17 +15,19 @@ import ClickSound from "../../assets/audio/click.mp3";
 export default function GameBoy() {
   const [startBtnClicked, setStartBtnClicked] = useState(false);
   const [menuNum, setMenuNum] = useState(3);
-  const [contactSlideNum, setContactSlideNum] = useState(0);
   const [projectSlideNum, setProjectSlideNum] = useState(0);
   const [resumeSlideNum, setResumeSlideNum] = useState(0);
   const [currentScreen, setCurrentScreen] = useState("start");
   const [playClick] = useSound(ClickSound);
   const [playPress] = useSound(PressSound);
   const [inputField, setInputField] = useState({
-    name: "",
-    email: "",
+    user_name: "",
+    user_email: "",
     message: ""
   });
+
+  const formRef = useRef();
+
 
   const handleStartBtnClick = () => {
     if (!startBtnClicked) {
@@ -58,11 +61,6 @@ export default function GameBoy() {
   };
 
   const handleRightBtn = () => {
-    if (startBtnClicked && currentScreen === "contact") {
-      if (contactSlideNum < 3) {
-        setContactSlideNum(contactSlideNum + 1);
-      }
-    }
     if (startBtnClicked && currentScreen === "projects") {
       if (projectSlideNum < 4) {
         setProjectSlideNum(projectSlideNum + 1);
@@ -77,11 +75,6 @@ export default function GameBoy() {
   };
 
   const handleLeftBtn = () => {
-    if (startBtnClicked && currentScreen === "contact") {
-      if (contactSlideNum > 0) {
-        setContactSlideNum(contactSlideNum - 1);
-      }
-    }
     if (startBtnClicked && currentScreen === "projects") {
       if (projectSlideNum > 0) {
         setProjectSlideNum(projectSlideNum - 1);
@@ -113,15 +106,13 @@ export default function GameBoy() {
     if (
       startBtnClicked &&
       currentScreen === "contact" &&
-      contactSlideNum === 3 &&
-      inputField.name &&
-      inputField.email &&
+      inputField.user_name &&
+      inputField.user_email &&
       inputField.message
     ) {
       e.preventDefault();
-      console.log(inputField);
-      setCurrentScreen("menu");
       handleSubmit();
+      setCurrentScreen("menu");
     }
     playPress();
   };
@@ -129,17 +120,21 @@ export default function GameBoy() {
   const handleBButtonClick = () => {
     if (startBtnClicked) {
       setCurrentScreen("menu");
-      setContactSlideNum(0);
       setProjectSlideNum(0);
       setResumeSlideNum(0);
+      setInputField({ user_name: "", user_email: "", message: "" });
     }
     playPress();
   };
 
   const handleSubmit = () => {
-    console.log("form sent");
-    setInputField({ name: "", email: "", message: "" });
-    setContactSlideNum(0);
+      emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, formRef.current, process.env.REACT_APP_PUBLIC_KEY)
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+        });
+        setInputField({ user_name: "", user_email: "", message: "" });
   };
 
   return (
@@ -153,12 +148,13 @@ export default function GameBoy() {
           startBtnClicked={startBtnClicked}
           menuNum={menuNum}
           currentScreen={currentScreen}
-          contactSlideNum={contactSlideNum}
           projectSlideNum={projectSlideNum}
           resumeSlideNum={resumeSlideNum}
           handleSubmit={handleSubmit}
           setInputField={setInputField}
           inputField={inputField}
+          formRef={formRef}
+
         />
         {/* Gameboy bottom control section */}
         <Col className="gameboy-inner-bottom">
@@ -201,12 +197,7 @@ export default function GameBoy() {
               <Button
                 className="play-btns btn-light d-flex justify-content-center align-items-center ms-auto"
                 onClick={handleAButtonClick}
-                type={
-                  currentScreen === "contact" && contactSlideNum === 3
-                    ? "submit"
-                    : ""
-                }
-              >
+                type={ currentScreen === "contact" ? "submit" : "" } >
                 <img src={A} alt="" width="20px" />
               </Button>
               <Button
