@@ -11,6 +11,7 @@ import Left from "../../assets/caret-left.svg";
 import Right from "../../assets/caret-right.svg";
 import PressSound from "../../assets/audio/press.mp3";
 import ClickSound from "../../assets/audio/click.mp3";
+import projects from '../Screens/ProjectsScreen/projects';
 
 export default function GameBoy() {
   const [startBtnClicked, setStartBtnClicked] = useState(false);
@@ -62,12 +63,12 @@ export default function GameBoy() {
 
   const handleRightBtn = () => {
     if (startBtnClicked && currentScreen === "projects") {
-      if (projectSlideNum < 4) {
+      if (projectSlideNum < (projects.length - 1)) {
         setProjectSlideNum(projectSlideNum + 1);
       }
     }
     if (startBtnClicked && currentScreen === "resume") {
-      if (resumeSlideNum < 4) {
+      if (resumeSlideNum < 3) {
         setResumeSlideNum(resumeSlideNum + 1);
       }
     }
