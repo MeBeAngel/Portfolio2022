@@ -1,5 +1,4 @@
 import React from "react";
-import { Col } from "react-bootstrap";
 import Projects from './projects';
 import ProjectItem from "./ProjectItem";
 import LeftArrow from "../../../assets/caret-left.svg";
