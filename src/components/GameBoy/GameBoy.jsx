@@ -12,6 +12,7 @@ import Right from "../../assets/caret-right.svg";
 import PressSound from "../../assets/audio/press.mp3";
 import ClickSound from "../../assets/audio/click.mp3";
 import projects from '../Screens/ProjectsScreen/projects';
+import CornerVent from './CornerVent';
 
 export default function GameBoy() {
   const [startBtnClicked, setStartBtnClicked] = useState(false);
@@ -143,7 +144,7 @@ export default function GameBoy() {
       fluid
       className="home-page d-flex justify-content-center align-items-center p-0"
     >
-      <Row className="gameboy-shell d-flex flex-column bg-dark p-0 m-0 mx-auto shadow">
+      <Row className="gameboy-shell d-flex bg-dark p-0 m-0">
         {/* Gameboy top screen section */}
         <Screens
           startBtnClicked={startBtnClicked}
@@ -159,7 +160,8 @@ export default function GameBoy() {
         />
         {/* Gameboy bottom control section */}
         <Col className="gameboy-inner-bottom">
-          <Row className="px-3" style={{ height: "60%" }}>
+        <CornerVent />
+          <Row className="play-btn-row px-3" style={{ height: "60%" }}>
             {/* Directional buttons section */}
             <Col className="col-5 me-auto p-0">
               <div className="d-pad">
@@ -194,15 +196,15 @@ export default function GameBoy() {
               </div>
             </Col>
             {/* A and B buttons section */}
-            <Col className="col-5 d-flex flex-column justify-content-center">
+            <Col className="col-5 play-btns d-flex flex-column justify-content-center">
               <Button
-                className="play-btns btn-light d-flex justify-content-center align-items-center ms-auto"
+                className="play-btn__A btn-light d-flex justify-content-center align-items-center"
                 onClick={handleAButtonClick}
                 type={ currentScreen === "contact" ? "submit" : "" } >
                 <img src={A} alt="" width="20px" />
               </Button>
               <Button
-                className="play-btns btn-light d-flex justify-content-center align-items-center"
+                className="play-btn__B btn-light d-flex justify-content-center align-items-center"
                 onClick={handleBButtonClick}
               >
                 <img src={B} alt="" width="20px" />

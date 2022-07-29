@@ -7,7 +7,7 @@ import CodeSandbox from "../../../assets/code-sandbox.svg";
 
 export default function MenuScreen({ menuNum }) {
   return (
-    <Col className="gameboy-inner-top__screen d-flex justify-content-center align-items-center">
+    <div className="gameboy-inner-top__screen d-flex justify-content-center align-items-center">
       <div className="menu">
         <div className="menu-item">
           <span>
@@ -69,6 +69,6 @@ export default function MenuScreen({ menuNum }) {
           </a>
         </div>
       </div>
-    </Col>
+    </div>
   );
 }

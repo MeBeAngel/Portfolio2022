@@ -6,7 +6,7 @@ import Resume from "../../../assets/Resume_2022.pdf";
 
 export default function ResumeScreen({ resumeSlideNum }) {
   return (
-    <Col className="resume-screen gameboy-inner-top__screen d-flex justify-content-center align-items-center">
+    <div className="resume-screen gameboy-inner-top__screen d-flex justify-content-center align-items-center">
       {/* Arrows positioned absolutely */}
       {resumeSlideNum > 0 && (
         <img className="prev-arrow" src={PrevArrow} alt="" width="10px" />
@@ -107,6 +107,6 @@ export default function ResumeScreen({ resumeSlideNum }) {
           </a>
         </div>
       )}
-    </Col>
+    </div>
   );
 }

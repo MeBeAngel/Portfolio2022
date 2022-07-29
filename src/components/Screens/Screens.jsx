@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import StartScreen from "./StartScreen/StartScreen";
 import MenuScreen from "./MenuScreen/MenuScreen";
 import AboutScreen from "./AboutScreen/AboutScreen";
@@ -19,8 +19,7 @@ export default function Screen({
   formRef
 }) {
   return (
-    <Col className="gameboy-inner-top p-4">
-      <Row className="p-0 m-0" style={{ width: "100%", height: "100%" }}>
+    <Col className="gameboy-inner-top p-3">
         {!startBtnClicked ? <StartScreen /> : ""}
         {currentScreen === "menu" ? <MenuScreen menuNum={menuNum} /> : ""}
         {currentScreen === "about" ? <AboutScreen /> : ""}
@@ -44,7 +43,6 @@ export default function Screen({
         ) : (
           ""
         )}
-      </Row>
     </Col>
   );
 }

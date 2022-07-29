@@ -12,7 +12,7 @@ export default function ContactScreen({
   };
 
   return (
-    <Col className="contact-screen gameboy-inner-top__screen d-flex flex-column justify-content-center align-items-center text-secondary">
+    <div className="contact-screen gameboy-inner-top__screen d-flex flex-column justify-content-center align-items-center text-secondary">
       {/* Title */}
       <h4 className="title text-danger mb-0">Let's Connect!</h4>
 
@@ -73,6 +73,6 @@ export default function ContactScreen({
           ""
         )}
       </Form>
-    </Col>
+    </div>
   );
 }

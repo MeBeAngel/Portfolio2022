@@ -7,7 +7,7 @@ import RightArrow from "../../../assets/caret-right.svg";
 
 export default function ProjectsScreen({ projectSlideNum }) {
   return (
-    <Col className="gameboy-inner-top__screen d-flex justify-content-center align-items-center w-100">
+    <div className="gameboy-inner-top__screen d-flex justify-content-center align-items-center w-100">
       {projectSlideNum > 0 && (
         <img className="prev-arrow" src={LeftArrow} alt="" width="10px" />
       )}
@@ -28,6 +28,6 @@ export default function ProjectsScreen({ projectSlideNum }) {
       {projectSlideNum < (Projects.length - 1) && (
         <img className="next-arrow" src={RightArrow} alt="" width="10px" />
       )}
-    </Col>
+    </div>
   );
 }
