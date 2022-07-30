@@ -9,7 +9,7 @@ export default function App() {
   const test = 0;
   return (
     <main className="App">
-      <div className="gameboy-shell">
+      {/* <div className="gameboy-shell">
 
         <div className="inner-top">
           <div className="screen">
@@ -22,7 +22,9 @@ export default function App() {
           <div className="play-btns"></div>
         </div>
 
-      </div>
+      </div> */}
+      <h1>Sorry I missed you!</h1>
+      <h1>Under maintenance. Will be back up shortly!</h1>
     </main>
   );
 }
