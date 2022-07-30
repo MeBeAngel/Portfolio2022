@@ -6,7 +6,7 @@ import RightArrow from "../../../assets/caret-right.svg";
 
 export default function ProjectsScreen({ projectSlideNum }) {
   return (
-    <div className="gameboy-inner-top__screen d-flex justify-content-center align-items-center w-100">
+    <div className="project-screen">
       {projectSlideNum > 0 && (
         <img className="prev-arrow" src={LeftArrow} alt="" width="10px" />
       )}

@@ -156,7 +156,6 @@ export default function GameBoy() {
           setInputField={setInputField}
           inputField={inputField}
           formRef={formRef}
-
         />
         {/* Gameboy bottom control section */}
         <Col className="gameboy-inner-bottom">

@@ -2,16 +2,20 @@
 @import './components/Screens/MenuScreen/menuScreen.scss';
 @import './components/Screens/ContactScreen/contactScreen.scss';
 @import './components/Screens/ResumeScreen/resumeScreen.scss';
+@import './components/Screens/ProjectsScreen/projectsScreen.scss';
 
 * {
   box-sizing: border-box;
 }
 
 body {
+  margin: 0;
+}
+
+.App {
+  background: #cccccc;
+  width: 100vw;
   min-height: 100vh;
-  background-color: #cccccc;
-  background-image: url("https://www.transparenttextures.com/patterns/bright-squares.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 a {

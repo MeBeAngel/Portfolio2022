@@ -1,218 +1,250 @@
-.home-page {
+.gameboy-shell {
+  background: #191919;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+}
 
-  .gameboy-shell {
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    background-color: #212529;
-    background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
-    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-
-    .gameboy-inner-top {
-      max-width: 375px;
-      height: 375px;
-      margin: auto;
-
-      .gameboy-inner-top__screen {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        max-height: 375px;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        border-radius: 20px;
-        background-color: #f8f9fa;
-        box-shadow: rgb(0, 0, 0, 0.8) 3px 3px 14px 0px inset,
-          rgba(0, 0, 0, 0.5) -3px -3px 14px 1px inset;
-        overflow: hidden;
-
-        @keyframes zoom-title {
-          0% {
-            zoom: 100%;
-          }
-          25% {
-            zoom: 110%;
-          }
-          50% {
-            zoom: 120%;
-          }
-          75% {
-            zoom: 110%;
-          }
-          100% {
-            zoom: 100%;
-          }
-        }
-
-        .screen-title {
-          font-weight: bold;
-          text-shadow: 3px 3px #191919;
-          animation-name: zoom-title;
-          animation-duration: 2s;
-          animation-iteration-count: infinite;
-        }
-
-        .prev-arrow {
-          position: absolute;
-          top: 50%;
-          left: 10px;
-        }
-        .next-arrow {
-          position: absolute;
-          top: 50%;
-          right: 10px;
-        }
-      }
-    }
-    .gameboy-inner-bottom {
-      max-width: 375px;
-      max-height: 321px;
-      margin: 0 auto 0 auto;
-      .d-pad {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        .horizontal-btn {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 110px;
-          height: 45px;
-          transform: translate(-50%, -50%);
-          border-radius: 5px;
-          //box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 8px 3px;
-        }
-        .vertical-btn {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 45px;
-          height: 110px;
-          transform: translate(-50%, -50%);
-          border-radius: 5px;
-          //box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 8px 3px;
-        }
-      }
-      .play-btns {
-        .play-btn__A,
-        .play-btn__B {
-          width: 65px;
-          height: 65px;
-          border-radius: 50%;
-          //box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 8px 2px;
-        }
-        .play-btn__A {
-          margin-left: auto;
-        }
-      }
-    }
-    .start-and-select-btn-section {
-      .select-btn {
-        width: 50px;
-        height: 10px;
-        border-radius: 10px;
-        //box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 8px 1px;
-      }
-      .select-text {
-        font-weight: bold;
-      }
-      .start-btn {
-        width: 50px;
-        height: 10px;
-        border-radius: 10px;
-        //box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 8px 1px;
-      }
-      .start-text {
-        font-weight: bold;
-      }
-    }
+.inner-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: orange;
+  .screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 355px;
+    height: 355px;
+    padding: 15px;
+    border-radius: 20px;
+    background: #f8f9fa;
+    box-shadow: rgb(0, 0, 0, 0.8) 3px 3px 14px 0px inset,
+      rgba(0, 0, 0, 0.5) -3px -3px 14px 1px inset;
+      overflow: hidden;
   }
 }
 
-@media screen and (orientation: landscape) and (max-height: 680px) {
-  .home-page {
-    .gameboy-shell {
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-
-      .gameboy-inner-top {
-        max-height: 100%;
-      }
-      .gameboy-inner-bottom {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        max-width: 350px;
-        max-height: 390px;
-        margin: auto;
-
-        .play-btn-row {
-          margin-bottom: 20px;
-          .play-btns {
-            .play-btn__A {
-              margin: 0 0 10px 0;
-            }
-          }
-        }
-      }
-    }
-  }
+.inner-bottom {
+  background: pink;
 }
 
-@media screen and (min-width: 450px) and (min-height: 700px) {
-  .home-page {
-    .gameboy-shell {
-      max-width: 375px;
-      max-height: 675px;
-      border-radius: 25px;
-      box-shadow: rgba(0, 0, 0, 0.3) 0px 54px 55px,
-        rgba(0, 0, 0, 0.4) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+// .home-page {
+//   width: 100vw;
+//   height: 100vh;
 
-      .gameboy-inner-bottom {
-        position: relative;
+//   .gameboy-shell {
+//     flex-direction: column;
+//     width: 100%;
+//     height: 100%;
+//     background-color: #212529;
+//     background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+//     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 
-        .vent-bar {
-          position: absolute;
-          background: #2a363b;
-          border-radius: 25px;
-          transform: rotate(45deg);
-          box-shadow: rgb(0, 0, 0, 0.21) 3px 3px 14px 0px inset,
-            rgba(0, 0, 0, 0.5) -3px -3px 14px 1px inset;
-        }
+//     .gameboy-inner-top {
+//       max-width: 375px;
+//       height: 375px;
+//       margin: auto;
 
-        .vent-bar-1 {
-          right: 62px;
-          bottom: 19px;
-          width: 10px;
-          height: 105px;
-        }
+//       .gameboy-inner-top__screen {
+//         position: relative;
+//         width: 100%;
+//         height: 100%;
+//         max-height: 375px;
+//         background-size: cover;
+//         background-position: center;
+//         background-repeat: no-repeat;
+//         border-radius: 20px;
+//         background-color: #f8f9fa;
+//         box-shadow: rgb(0, 0, 0, 0.8) 3px 3px 14px 0px inset,
+//           rgba(0, 0, 0, 0.5) -3px -3px 14px 1px inset;
+//         overflow: hidden;
 
-        .vent-bar-2 {
-          right: 46px;
-          bottom: 13px;
-          width: 10px;
-          height: 85px;
-        }
+//         @keyframes zoom-title {
+//           0% {
+//             zoom: 100%;
+//           }
+//           25% {
+//             zoom: 110%;
+//           }
+//           50% {
+//             zoom: 120%;
+//           }
+//           75% {
+//             zoom: 110%;
+//           }
+//           100% {
+//             zoom: 100%;
+//           }
+//         }
 
-        .vent-bar-3 {
-          right: 31px;
-          bottom: 8px;
-          width: 10px;
-          height: 65px;
-        }
+//         .screen-title {
+//           font-weight: bold;
+//           text-shadow: 3px 3px #191919;
+//           animation-name: zoom-title;
+//           animation-duration: 2s;
+//           animation-iteration-count: infinite;
+//         }
 
-        .vent-bar-4 {
-          right: 17px;
-          bottom: 10px;
-          width: 10px;
-          height: 35px;
-        }
-      }
-    }
-  }
-}
+//         .prev-arrow {
+//           position: absolute;
+//           top: 50%;
+//           left: 10px;
+//         }
+//         .next-arrow {
+//           position: absolute;
+//           top: 50%;
+//           right: 10px;
+//         }
+//       }
+//     }
+//     .gameboy-inner-bottom {
+//       max-width: 375px;
+//       max-height: 321px;
+//       margin: 0 auto 0 auto;
+//       .d-pad {
+//         position: relative;
+//         width: 100%;
+//         height: 100%;
+//         .horizontal-btn {
+//           position: absolute;
+//           top: 50%;
+//           left: 50%;
+//           width: 110px;
+//           height: 45px;
+//           transform: translate(-50%, -50%);
+//           border-radius: 5px;
+//           //box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 8px 3px;
+//         }
+//         .vertical-btn {
+//           position: absolute;
+//           top: 50%;
+//           left: 50%;
+//           width: 45px;
+//           height: 110px;
+//           transform: translate(-50%, -50%);
+//           border-radius: 5px;
+//           //box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 8px 3px;
+//         }
+//       }
+//       .play-btns {
+//         .play-btn__A,
+//         .play-btn__B {
+//           width: 65px;
+//           height: 65px;
+//           border-radius: 50%;
+//           //box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 8px 2px;
+//         }
+//         .play-btn__A {
+//           margin-left: auto;
+//         }
+//       }
+//     }
+//     .start-and-select-btn-section {
+//       .select-btn {
+//         width: 50px;
+//         height: 10px;
+//         border-radius: 10px;
+//         //box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 8px 1px;
+//       }
+//       .select-text {
+//         font-weight: bold;
+//       }
+//       .start-btn {
+//         width: 50px;
+//         height: 10px;
+//         border-radius: 10px;
+//         //box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 8px 1px;
+//       }
+//       .start-text {
+//         font-weight: bold;
+//       }
+//     }
+//   }
+// }
+
+// @media screen and (orientation: landscape) and (max-height: 680px) {
+//   .home-page {
+//     .gameboy-shell {
+//       flex-direction: row;
+//       justify-content: center;
+//       align-items: center;
+
+//       .gameboy-inner-top {
+//         max-height: 100%;
+//       }
+//       .gameboy-inner-bottom {
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         max-width: 350px;
+//         max-height: 390px;
+//         margin: auto;
+
+//         .play-btn-row {
+//           margin-bottom: 20px;
+//           .play-btns {
+//             .play-btn__A {
+//               margin: 0 0 10px 0;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// @media screen and (min-width: 450px) and (min-height: 700px) {
+//   .home-page {
+//     .gameboy-shell {
+//       max-width: 375px;
+//       max-height: 675px;
+//       border-radius: 25px;
+//       box-shadow: rgba(0, 0, 0, 0.3) 0px 54px 55px,
+//         rgba(0, 0, 0, 0.4) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+//         rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+//       .gameboy-inner-bottom {
+//         position: relative;
+
+//         .vent-bar {
+//           position: absolute;
+//           background: #2a363b;
+//           border-radius: 25px;
+//           transform: rotate(45deg);
+//           box-shadow: rgb(0, 0, 0, 0.21) 3px 3px 14px 0px inset,
+//             rgba(0, 0, 0, 0.5) -3px -3px 14px 1px inset;
+//         }
+
+//         .vent-bar-1 {
+//           right: 62px;
+//           bottom: 19px;
+//           width: 10px;
+//           height: 105px;
+//         }
+
+//         .vent-bar-2 {
+//           right: 46px;
+//           bottom: 13px;
+//           width: 10px;
+//           height: 85px;
+//         }
+
+//         .vent-bar-3 {
+//           right: 31px;
+//           bottom: 8px;
+//           width: 10px;
+//           height: 65px;
+//         }
+
+//         .vent-bar-4 {
+//           right: 17px;
+//           bottom: 10px;
+//           width: 10px;
+//           height: 35px;
+//         }
+//       }
+//     }
+//   }
+// }

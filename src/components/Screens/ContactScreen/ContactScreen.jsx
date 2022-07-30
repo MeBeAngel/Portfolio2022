@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 
 export default function ContactScreen({
   handleSubmit,
@@ -12,7 +12,7 @@ export default function ContactScreen({
   };
 
   return (
-    <div className="contact-screen gameboy-inner-top__screen d-flex flex-column justify-content-center align-items-center text-secondary">
+    <div className="contact-screen">
       {/* Title */}
       <h4 className="title text-danger mb-0">Let's Connect!</h4>
 
