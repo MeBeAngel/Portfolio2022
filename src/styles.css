@@ -1,0 +1,571 @@
+@charset "UTF-8";
+.gameboy-shell {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 375px;
+  max-height: 750px;
+}
+.gameboy-shell .inner-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+}
+.gameboy-shell .inner-top .screen {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 355px;
+  height: 355px;
+  border-radius: 20px;
+  background: #f8f9fa;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.8) 3px 3px 14px 0px inset, rgba(0, 0, 0, 0.5) -3px -3px 14px 1px inset;
+          box-shadow: rgba(0, 0, 0, 0.8) 3px 3px 14px 0px inset, rgba(0, 0, 0, 0.5) -3px -3px 14px 1px inset;
+  overflow: hidden;
+}
+.gameboy-shell .inner-top .screen .prev-arrow {
+  position: absolute;
+  top: 50%;
+  left: 6px;
+}
+.gameboy-shell .inner-top .screen .next-arrow {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+}
+.gameboy-shell .inner-bottom {
+  width: 100%;
+}
+.gameboy-shell .inner-bottom .btn-row-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 150px;
+  margin: 25px 0;
+}
+.gameboy-shell .inner-bottom .btn-row-1 .d-pad {
+  position: relative;
+  width: 110px;
+  height: 110px;
+}
+.gameboy-shell .inner-bottom .btn-row-1 .d-pad .horizontal-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 110px;
+  height: 45px;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 5px;
+  background-color: #6c757d;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+          box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.gameboy-shell .inner-bottom .btn-row-1 .d-pad .vertical-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 45px;
+  height: 110px;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 5px;
+  background-color: #6c757d;
+  -webkit-box-shadow: 0 8px 7px -5px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 8px 7px -5px rgba(0, 0, 0, 0.23);
+}
+.gameboy-shell .inner-bottom .btn-row-1 .d-pad button {
+  background-color: #6c757d;
+  border: none;
+}
+.gameboy-shell .inner-bottom .btn-row-1 .play-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.gameboy-shell .inner-bottom .btn-row-1 .play-btns .play-btn__A,
+.gameboy-shell .inner-bottom .btn-row-1 .play-btns .play-btn__B {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 65px;
+  height: 65px;
+  border: none;
+  border-radius: 50%;
+  background-color: #6c757d;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+          box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.gameboy-shell .inner-bottom .btn-row-1 .play-btns .play-btn__A {
+  margin-left: 50px;
+}
+.gameboy-shell .inner-bottom .btn-row-2 {
+  height: 70px;
+  padding: 5px;
+}
+.gameboy-shell .inner-bottom .btn-row-2 .start-and-select-btn-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.gameboy-shell .inner-bottom .btn-row-2 .start-and-select-btn-section .select-btn,
+.gameboy-shell .inner-bottom .btn-row-2 .start-and-select-btn-section .start-btn {
+  position: relative;
+  font-weight: bold;
+  -webkit-transform: rotate(-35deg);
+      -ms-transform: rotate(-35deg);
+          transform: rotate(-35deg);
+}
+.gameboy-shell .inner-bottom .btn-row-2 .start-and-select-btn-section .select-btn button,
+.gameboy-shell .inner-bottom .btn-row-2 .start-and-select-btn-section .start-btn button {
+  width: 50px;
+  height: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #6c757d;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+          box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.gameboy-shell .inner-bottom .btn-row-2 .start-and-select-btn-section .select-btn {
+  margin-right: 20px;
+}
+.gameboy-shell .vent-bar {
+  display: none;
+  position: absolute;
+  border-radius: 25px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.21) 3px 3px 14px 0px inset, rgba(0, 0, 0, 0.5) -3px -3px 14px 1px inset;
+          box-shadow: rgba(0, 0, 0, 0.21) 3px 3px 14px 0px inset, rgba(0, 0, 0, 0.5) -3px -3px 14px 1px inset;
+}
+.gameboy-shell .vent-bar-1 {
+  right: 62px;
+  bottom: 19px;
+  width: 10px;
+  height: 105px;
+}
+.gameboy-shell .vent-bar-2 {
+  right: 46px;
+  bottom: 13px;
+  width: 10px;
+  height: 85px;
+}
+.gameboy-shell .vent-bar-3 {
+  right: 31px;
+  bottom: 8px;
+  width: 10px;
+  height: 65px;
+}
+.gameboy-shell .vent-bar-4 {
+  right: 17px;
+  bottom: 10px;
+  width: 10px;
+  height: 35px;
+}
+
+@media screen and (max-height: 550px) and (orientation: landscape) {
+  .gameboy-shell {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 800px;
+    max-height: 100%;
+  }
+  .gameboy-shell .vent-bar {
+    display: block;
+  }
+  .gameboy-shell .inner-bottom {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 700px) and (min-height: 800px) {
+  .gameboy-shell {
+    border-radius: 20px;
+    background-color: #cccccc;
+  }
+  .gameboy-shell .vent-bar {
+    display: block;
+  }
+}
+@-webkit-keyframes zoom {
+  0% {
+    zoom: 1;
+  }
+  50% {
+    zoom: 1.3;
+  }
+  100% {
+    zoom: 1;
+  }
+}
+@keyframes zoom {
+  0% {
+    zoom: 1;
+  }
+  50% {
+    zoom: 1.3;
+  }
+  100% {
+    zoom: 1;
+  }
+}
+.start-screen .start-text {
+  color: #dc3545;
+  -webkit-animation-name: zoom;
+          animation-name: zoom;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.menu-screen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.menu-screen .menu-item {
+  height: 50px;
+}
+.menu-screen .menu-item span {
+  position: relative;
+}
+.menu-screen .menu-item span h2 {
+  margin: 0;
+  color: #6c757d;
+}
+.menu-screen .menu-item span .menu-cursor {
+  position: absolute;
+  top: 8px;
+  left: -40px;
+  width: 30px;
+}
+.menu-screen .social .linkedin {
+  margin: 0 15px;
+}
+.menu-screen .active {
+  color: #dc3545 !important;
+}
+
+.about-screen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+}
+.about-screen .title {
+  color: #dc3545;
+}
+
+.contact-screen {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.contact-screen #contact-form .title {
+  text-align: center;
+  color: #dc3545;
+  margin-bottom: 15px;
+}
+.contact-screen #contact-form .form-question {
+  font-weight: bold;
+}
+.contact-screen #contact-form .form-question input::-webkit-input-placeholder, .contact-screen #contact-form .form-question textarea::-webkit-input-placeholder {
+  font-size: 15px;
+  color: gray;
+  opacity: 0.9;
+}
+.contact-screen #contact-form .form-question input::-moz-placeholder, .contact-screen #contact-form .form-question textarea::-moz-placeholder {
+  font-size: 15px;
+  color: gray;
+  opacity: 0.9;
+}
+.contact-screen #contact-form .form-question input:-ms-input-placeholder, .contact-screen #contact-form .form-question textarea:-ms-input-placeholder {
+  font-size: 15px;
+  color: gray;
+  opacity: 0.9;
+}
+.contact-screen #contact-form .form-question input::-ms-input-placeholder, .contact-screen #contact-form .form-question textarea::-ms-input-placeholder {
+  font-size: 15px;
+  color: gray;
+  opacity: 0.9;
+}
+.contact-screen #contact-form .form-question input::placeholder,
+.contact-screen #contact-form .form-question textarea::placeholder {
+  font-size: 15px;
+  color: gray;
+  opacity: 0.9;
+}
+.contact-screen .submit-message {
+  text-align: center;
+  height: 20px;
+  font-weight: bold;
+  color: #dc3545;
+  margin: 15px 0 0 0;
+}
+
+.resume-screen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+}
+.resume-screen .title {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+  color: #dc3545;
+}
+.resume-screen .skills-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+.resume-screen .skills-section .skill-group {
+  width: 45%;
+  text-align: center;
+}
+.resume-screen .experience-section {
+  text-align: center;
+}
+.resume-screen .experience-section .exp-item:first-of-type {
+  margin-bottom: 20px;
+}
+.resume-screen .experience-section .exp-item .exp-item__title {
+  font-style: italic;
+  margin-bottom: 0;
+  color: #dc3545;
+}
+.resume-screen .experience-section .exp-item .exp-item__sub-title {
+  margin-bottom: 0;
+}
+.resume-screen .experience-section .exp-item .exp-item__sub-title,
+.resume-screen .experience-section .exp-item li {
+  font-size: 12px;
+}
+.resume-screen .experience-section .exp-item .exp-item__list {
+  list-style-type: none;
+  padding-left: 10px;
+}
+.resume-screen .experience-section .exp-item .exp-item__list li:before {
+  content: "•";
+  color: #dc3545;
+  padding-right: 3px;
+}
+.resume-screen .education-section .edu-item {
+  text-align: center;
+}
+.resume-screen .education-section .edu-item .edu-item__title {
+  margin-bottom: 0;
+  color: #dc3545;
+}
+.resume-screen .education-section .edu-item .edu-item__sub-title {
+  font-size: 13px;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+.resume-screen .education-section .edu-item .edu-item__description {
+  margin-bottom: 0;
+}
+.resume-screen .download-resume-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.resume-screen .download-resume-section button {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.project-screen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+}
+.project-screen .project-item {
+  text-align: center;
+}
+.project-screen .project-item .title {
+  color: #dc3545;
+}
+.project-screen .project-item .project-item__links .github {
+  margin: 0 15px;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+.App {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #212529;
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+a {
+  text-decoration: none;
+}
+
+p, li {
+  color: #6c757d;
+}
