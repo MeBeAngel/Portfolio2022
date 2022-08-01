@@ -1,23 +1,47 @@
-@import './components/GameBoy/gameBoy.scss';
-@import './components/Screens/MenuScreen/menuScreen.scss';
-@import './components/Screens/ContactScreen/contactScreen.scss';
-@import './components/Screens/ResumeScreen/resumeScreen.scss';
-@import './components/Screens/ProjectsScreen/projectsScreen.scss';
+// Utility Styles
+@import "./scss/colors";
+
+// Component Styles
+@import "./components/GameBoy/gameBoy.scss";
+@import "./components//Screens/StartScreen/startScreen.scss";
+@import "./components/Screens/MenuScreen/menuScreen.scss";
+@import "./components/Screens/AboutScreen/aboutScreen.scss";
+@import "./components/Screens/ContactScreen/contactScreen.scss";
+@import "./components/Screens/ResumeScreen/resumeScreen.scss";
+@import "./components/Screens/ProjectsScreen/projectsScreen.scss";
 
 * {
   box-sizing: border-box;
-}
-
-body {
   margin: 0;
+  padding: 0;
 }
 
-.App {
-  //background: #cccccc;
+html {
   width: 100vw;
   min-height: 100vh;
 }
 
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #212529;
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
 a {
   text-decoration: none;
+}
+
+p, li {
+  color: $lightGray;
 }

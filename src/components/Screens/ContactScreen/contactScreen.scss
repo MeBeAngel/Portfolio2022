@@ -1,14 +1,22 @@
+@import "../../../scss/colors";
+
 .contact-screen {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 
-  .title {
-    position: absolute;
-    top: 13px;
-    left: 50%;
-    transform: (translate(-50%, 0));
-  }
 
-  .contact-form {
+
+  #contact-form {
+    .title {
+      text-align: center;
+      color: $red;
+      margin-bottom: 15px;
+    }
+
     .form-question {
       font-weight: bold;
 
@@ -24,10 +32,10 @@
   }
 
   .submit-message {
-    position: absolute;
-    bottom: 13px;
-    left: 50%;
-    transform: translate(-50%, 0);
+    text-align: center;
+    height: 20px;
     font-weight: bold;
+    color: $red;
+    margin: 15px 0 0 0;
   }
 }

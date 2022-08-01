@@ -1,13 +1,20 @@
-.menu {
+@import "../../../scss/colors";
+
+.menu-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
   .menu-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 50px;
     span {
       position: relative;
       h2 {
         margin: 0;
+        color: $lightGray;
       }
       .menu-cursor {
         position: absolute;
@@ -21,5 +28,8 @@
     .linkedin {
       margin: 0 15px;
     }
+  }
+  .active {
+    color: $red !important;
   }
 }

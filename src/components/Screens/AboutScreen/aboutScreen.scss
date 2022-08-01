@@ -1,0 +1,15 @@
+@import "../../../scss/colors";
+
+.about-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+
+    .title {
+        color: $red;
+    }
+}

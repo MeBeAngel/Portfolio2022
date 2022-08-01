@@ -1,0 +1,22 @@
+@import "../../../scss/colors";
+
+@keyframes zoom {
+  0% {
+    zoom: 1;
+  }
+  50% {
+    zoom: 1.3;
+  }
+  100% {
+    zoom: 1;
+  }
+}
+
+.start-screen {
+  .start-text {
+    color: $red;
+    animation-name: zoom;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+}

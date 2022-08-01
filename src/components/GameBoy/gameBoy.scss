@@ -1,250 +1,216 @@
-.gameboy-shell {
-  background: #191919;
-  width: 100vw;
-  min-height: 100vh;
-}
+@import "../../scss/colors";
 
-.inner-top {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  background: orange;
-  .screen {
+.gameboy-shell {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 375px;
+  max-height: 750px;
+
+  // Inner Top
+  .inner-top {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    width: 355px;
-    height: 355px;
-    padding: 15px;
-    border-radius: 20px;
-    background: #f8f9fa;
-    box-shadow: rgb(0, 0, 0, 0.8) 3px 3px 14px 0px inset,
-      rgba(0, 0, 0, 0.5) -3px -3px 14px 1px inset;
+    padding: 10px;
+
+    // Screen
+    .screen {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 355px;
+      height: 355px;
+      border-radius: 20px;
+      background: #f8f9fa;
+      box-shadow: rgb(0, 0, 0, 0.8) 3px 3px 14px 0px inset,
+        rgba(0, 0, 0, 0.5) -3px -3px 14px 1px inset;
       overflow: hidden;
+
+      .prev-arrow {
+        position: absolute;
+        top: 50%;
+        left: 6px;
+      }
+      .next-arrow {
+        position: absolute;
+        top: 50%;
+        right: 6px;
+      }
+    }
+  }
+
+  // Inner Bottom
+  .inner-bottom {
+    width: 100%;
+
+    // Row 1
+    .btn-row-1 {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 150px;
+      margin: 25px 0;
+      .d-pad {
+        position: relative;
+        width: 110px;
+        height: 110px;
+
+        .horizontal-btn {
+          display: flex;
+          justify-content: space-between;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 110px;
+          height: 45px;
+          transform: translate(-50%, -50%);
+          border-radius: 5px;
+          background-color: $lightGray;
+          box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+            rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        }
+        .vertical-btn {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 45px;
+          height: 110px;
+          transform: translate(-50%, -50%);
+          border-radius: 5px;
+          background-color: $lightGray;
+          box-shadow: 0 8px 7px -5px rgba(0, 0, 0, 0.23);
+        }
+        button {
+          background-color: $lightGray;
+          border: none;
+        }
+      }
+
+      .play-btns {
+        display: flex;
+        flex-direction: column;
+
+        .play-btn__A,
+        .play-btn__B {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 65px;
+          height: 65px;
+          border: none;
+          border-radius: 50%;
+          background-color: $lightGray;
+          box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+            rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        }
+        .play-btn__A {
+          margin-left: 50px;
+        }
+      }
+    }
+    // Row 2
+    .btn-row-2 {
+      height: 70px;
+      padding: 5px;
+
+      .start-and-select-btn-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .select-btn,
+        .start-btn {
+          position: relative;
+          font-weight: bold;
+          transform: rotate(-35deg);
+          button {
+            width: 50px;
+            height: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: $lightGray;
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+              rgba(0, 0, 0, 0.23) 0px 6px 6px;
+          }
+        }
+        .select-btn {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+
+  // Corner Vent Style
+  .vent-bar {
+    display: none;
+    position: absolute;
+    background: #2a363b;
+    border-radius: 25px;
+    transform: rotate(45deg);
+    box-shadow: rgb(0, 0, 0, 0.21) 3px 3px 14px 0px inset,
+      rgba(0, 0, 0, 0.5) -3px -3px 14px 1px inset;
+  }
+
+  .vent-bar-1 {
+    right: 62px;
+    bottom: 19px;
+    width: 10px;
+    height: 105px;
+  }
+
+  .vent-bar-2 {
+    right: 46px;
+    bottom: 13px;
+    width: 10px;
+    height: 85px;
+  }
+
+  .vent-bar-3 {
+    right: 31px;
+    bottom: 8px;
+    width: 10px;
+    height: 65px;
+  }
+
+  .vent-bar-4 {
+    right: 17px;
+    bottom: 10px;
+    width: 10px;
+    height: 35px;
   }
 }
 
-.inner-bottom {
-  background: pink;
+@media screen and (max-height: 550px) and (orientation: landscape) {
+  .gameboy-shell {
+    display: flex;
+    max-width: 800px;
+    max-height: 100%;
+
+    .vent-bar {
+      display: block;
+    }
+
+    .inner-bottom {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+    }
+  }
 }
 
-// .home-page {
-//   width: 100vw;
-//   height: 100vh;
+@media screen and (min-width: 700px) and (min-height: 800px) {
+  .gameboy-shell {
+    border-radius: 20px;
+    background-color: #cccccc;
 
-//   .gameboy-shell {
-//     flex-direction: column;
-//     width: 100%;
-//     height: 100%;
-//     background-color: #212529;
-//     background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
-//     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-
-//     .gameboy-inner-top {
-//       max-width: 375px;
-//       height: 375px;
-//       margin: auto;
-
-//       .gameboy-inner-top__screen {
-//         position: relative;
-//         width: 100%;
-//         height: 100%;
-//         max-height: 375px;
-//         background-size: cover;
-//         background-position: center;
-//         background-repeat: no-repeat;
-//         border-radius: 20px;
-//         background-color: #f8f9fa;
-//         box-shadow: rgb(0, 0, 0, 0.8) 3px 3px 14px 0px inset,
-//           rgba(0, 0, 0, 0.5) -3px -3px 14px 1px inset;
-//         overflow: hidden;
-
-//         @keyframes zoom-title {
-//           0% {
-//             zoom: 100%;
-//           }
-//           25% {
-//             zoom: 110%;
-//           }
-//           50% {
-//             zoom: 120%;
-//           }
-//           75% {
-//             zoom: 110%;
-//           }
-//           100% {
-//             zoom: 100%;
-//           }
-//         }
-
-//         .screen-title {
-//           font-weight: bold;
-//           text-shadow: 3px 3px #191919;
-//           animation-name: zoom-title;
-//           animation-duration: 2s;
-//           animation-iteration-count: infinite;
-//         }
-
-//         .prev-arrow {
-//           position: absolute;
-//           top: 50%;
-//           left: 10px;
-//         }
-//         .next-arrow {
-//           position: absolute;
-//           top: 50%;
-//           right: 10px;
-//         }
-//       }
-//     }
-//     .gameboy-inner-bottom {
-//       max-width: 375px;
-//       max-height: 321px;
-//       margin: 0 auto 0 auto;
-//       .d-pad {
-//         position: relative;
-//         width: 100%;
-//         height: 100%;
-//         .horizontal-btn {
-//           position: absolute;
-//           top: 50%;
-//           left: 50%;
-//           width: 110px;
-//           height: 45px;
-//           transform: translate(-50%, -50%);
-//           border-radius: 5px;
-//           //box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 8px 3px;
-//         }
-//         .vertical-btn {
-//           position: absolute;
-//           top: 50%;
-//           left: 50%;
-//           width: 45px;
-//           height: 110px;
-//           transform: translate(-50%, -50%);
-//           border-radius: 5px;
-//           //box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 8px 3px;
-//         }
-//       }
-//       .play-btns {
-//         .play-btn__A,
-//         .play-btn__B {
-//           width: 65px;
-//           height: 65px;
-//           border-radius: 50%;
-//           //box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 8px 2px;
-//         }
-//         .play-btn__A {
-//           margin-left: auto;
-//         }
-//       }
-//     }
-//     .start-and-select-btn-section {
-//       .select-btn {
-//         width: 50px;
-//         height: 10px;
-//         border-radius: 10px;
-//         //box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 8px 1px;
-//       }
-//       .select-text {
-//         font-weight: bold;
-//       }
-//       .start-btn {
-//         width: 50px;
-//         height: 10px;
-//         border-radius: 10px;
-//         //box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 8px 1px;
-//       }
-//       .start-text {
-//         font-weight: bold;
-//       }
-//     }
-//   }
-// }
-
-// @media screen and (orientation: landscape) and (max-height: 680px) {
-//   .home-page {
-//     .gameboy-shell {
-//       flex-direction: row;
-//       justify-content: center;
-//       align-items: center;
-
-//       .gameboy-inner-top {
-//         max-height: 100%;
-//       }
-//       .gameboy-inner-bottom {
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: center;
-//         max-width: 350px;
-//         max-height: 390px;
-//         margin: auto;
-
-//         .play-btn-row {
-//           margin-bottom: 20px;
-//           .play-btns {
-//             .play-btn__A {
-//               margin: 0 0 10px 0;
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-
-// @media screen and (min-width: 450px) and (min-height: 700px) {
-//   .home-page {
-//     .gameboy-shell {
-//       max-width: 375px;
-//       max-height: 675px;
-//       border-radius: 25px;
-//       box-shadow: rgba(0, 0, 0, 0.3) 0px 54px 55px,
-//         rgba(0, 0, 0, 0.4) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-//         rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-
-//       .gameboy-inner-bottom {
-//         position: relative;
-
-//         .vent-bar {
-//           position: absolute;
-//           background: #2a363b;
-//           border-radius: 25px;
-//           transform: rotate(45deg);
-//           box-shadow: rgb(0, 0, 0, 0.21) 3px 3px 14px 0px inset,
-//             rgba(0, 0, 0, 0.5) -3px -3px 14px 1px inset;
-//         }
-
-//         .vent-bar-1 {
-//           right: 62px;
-//           bottom: 19px;
-//           width: 10px;
-//           height: 105px;
-//         }
-
-//         .vent-bar-2 {
-//           right: 46px;
-//           bottom: 13px;
-//           width: 10px;
-//           height: 85px;
-//         }
-
-//         .vent-bar-3 {
-//           right: 31px;
-//           bottom: 8px;
-//           width: 10px;
-//           height: 65px;
-//         }
-
-//         .vent-bar-4 {
-//           right: 17px;
-//           bottom: 10px;
-//           width: 10px;
-//           height: 35px;
-//         }
-//       }
-//     }
-//   }
-// }
+    .vent-bar {
+      display: block;
+    }
+  }
+}

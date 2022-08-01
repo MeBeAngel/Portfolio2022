@@ -14,8 +14,8 @@ export default function StartScreen() {
     backgroundImage: `url(${Angel})`
   }
   return (
-    <div style={styles}>
-      <h1 style={{margin: 0}}>PRESS START</h1>
+    <div className="start-screen" style={styles}>
+      <h1 className="start-text" style={{margin: 0}}>PRESS START</h1>
     </div>
   );
 }

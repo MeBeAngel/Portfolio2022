@@ -2,9 +2,9 @@ import React from "react";
 
 export default function AboutScreen() {
   return (
-    <div>
-      <h3>HI, I'm Angel!</h3>
-      <p>
+    <div className="about-screen">
+      <h3 className="title">HI, I'm Angel!</h3>
+      <p className="body">
         I'm a Jr. Software engineer with the ability to learn and collaborate in
         rapidly changing environments. I Worked through hundreds of hours of
         bootcamp structure, learning JavaScript, React.Js, Node.Js, and MongoDB.

@@ -1,17 +1,24 @@
+@import "../../../scss/colors";
+
 .project-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
 
-    .project-item {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        width: 100%;
-        height: 100%;
+  .project-item {
+    text-align: center;
 
-        .project-item__links {
-            .github {
-                margin: 0 15px;
-            }
-        }
+    .title {
+      color: $red;
     }
+
+    .project-item__links {
+      .github {
+        margin: 0 15px;
+      }
+    }
+  }
 }

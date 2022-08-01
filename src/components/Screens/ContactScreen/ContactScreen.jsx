@@ -13,17 +13,18 @@ export default function ContactScreen({
 
   return (
     <div className="contact-screen">
-      {/* Title */}
-      <h4 className="title text-danger mb-0">Let's Connect!</h4>
 
       <Form ref={formRef} id="contact-form" action="" onSubmit={handleSubmit}>
+        {/* Title */}
+        <h2 className="title">Let's Connect!</h2>
+
         {/* Name Input */}
         <Form.Group
-          className="form-question text-danger mb-3 visible"
+          className="form-question mb-3 shadow"
           controlId="name"
         >
           <Form.Control
-            className="shadow"
+            className=""
             name="user_name"
             type="text"
             placeholder="Name"
@@ -34,11 +35,11 @@ export default function ContactScreen({
 
         {/* Email Input */}
         <Form.Group
-          className="form-question text-danger mb-3 visible"
+          className="form-question mb-3 shadow"
           controlId="email"
         >
           <Form.Control
-            className="shadow"
+            className=""
             name="user_email"
             type="email"
             placeholder="Email"
@@ -49,11 +50,11 @@ export default function ContactScreen({
 
         {/* Message Input */}
         <Form.Group
-          className="form-question text-danger mb-3 visible"
+          className="form-question shadow"
           controlId="message"
         >
           <Form.Control
-            className="shadow"
+            className=""
             name="message"
             rows="3"
             as="textarea"
@@ -65,13 +66,13 @@ export default function ContactScreen({
         </Form.Group>
 
         {/* Submit Message */}
+        <h6 className="submit-message">
         {inputField.user_name && inputField.user_email && inputField.message ? (
-          <div className="submit-message text-center">
-            <p className="text-danger">Press A to submit</p>
-          </div>
+          "Press A to send!"
         ) : (
           ""
         )}
+        </h6>
       </Form>
     </div>
   );

@@ -18,24 +18,24 @@ export default function ResumeScreen({ resumeSlideNum }) {
       {/* Resume slide #2 / Skills */}
       {resumeSlideNum === 0 && (
         <div className="skills-section">
-          <h3 className="">
+          <h3 className="title">
             Skills
           </h3>
-          <div className="">
+          <div className="skill-group">
             <p>React</p>
             <p>HTML</p>
             <p>CSS / SCSS</p>
             <p>Javascript</p>
             <p>React Native</p>
-            <p className="">Git</p>
+            <p>Git</p>
           </div>
-          <div className="">
+          <div className="skill-group">
             <p>Node</p>
             <p>Express</p>
             <p>MongoDB</p>
             <p>Postman</p>
             <p>VS Code</p>
-            <p className="">Adobe XD</p>
+            <p>Adobe XD</p>
           </div>
         </div>
       )}
@@ -43,24 +43,24 @@ export default function ResumeScreen({ resumeSlideNum }) {
       {/* Resume slide #3 / Experience */}
       {resumeSlideNum === 1 && (
         <div className="experience-section">
-          <h3 className="">
+          <h3 className="title">
             Experience
           </h3>
           {/* Experience Item */}
-          <div>
-            <h6 className="">Freelance Web Developer</h6>
-            <p className="">Kode & Kolor - Present</p>
-            <ul className="">
+          <div className="exp-item">
+            <h6 className="exp-item__title">Freelance Web Developer</h6>
+            <p className="exp-item__sub-title">Kode & Kolor - Present</p>
+            <ul className="exp-item__list">
               <li>Front-End website development using React and Next.js</li>
             </ul>
           </div>
           {/* Experience Item */}
-          <div>
-            <h6 className="">Web Dev Intern</h6>
-            <p className="">
+          <div className="exp-item">
+            <h6 className="exp-item__title">Web Dev Intern</h6>
+            <p className="exp-item__sub-title">
               Hammerspot Marketing - 08/2020 – 10/2020
             </p>
-            <ul className="">
+            <ul className="exp-item__list">
               <li>
                 Built website content using React, HTML, CSS, and Bootstrap
                 under technical lead supervision.
@@ -73,15 +73,15 @@ export default function ResumeScreen({ resumeSlideNum }) {
       {/* Resume slide #4 / Education */}
       {resumeSlideNum === 2 && (
         <div className="education-section">
-          <h3 className="">
+          <h3 className="title">
             Education
           </h3>
-          <div>
-            <h6 className="">Nucamp Coding Bootcamp</h6>
-            <p className="sub">
+          <div className="edu-item">
+            <h6 className="edu-item__title">Nucamp Coding Bootcamp</h6>
+            <p className="edu-item__sub-title">
               Full Stack Web Development
             </p>
-            <p className="">
+            <p className="edu-item__description">
               Coding bootcamp with courses Boostrap, React, Redux, React Native,
               NodeJS, and MongoDB
             </p>
@@ -98,7 +98,7 @@ export default function ResumeScreen({ resumeSlideNum }) {
             target="_blank"
             rel="noreferrer"
           >
-            <Button className="">
+            <Button className="bg-danger border-0 py-4">
               Download Resume
             </Button>
           </a>

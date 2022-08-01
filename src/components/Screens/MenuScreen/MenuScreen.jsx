@@ -6,10 +6,10 @@ import CodeSandbox from "../../../assets/code-sandbox.svg";
 
 export default function MenuScreen({ menuNum }) {
   return (
-      <div className="menu">
+      <div className="menu-screen">
         <div className="menu-item">
           <span>
-            <h2 className={menuNum === 3 ? "" : ""}>
+            <h2 className={menuNum === 3 ? "active" : ""}>
               ABOUT
             </h2>
             {menuNum === 3 ? (
@@ -21,7 +21,7 @@ export default function MenuScreen({ menuNum }) {
         </div>
         <div className="menu-item">
           <span>
-            <h2 className={menuNum === 2 ? "" : ""}>
+            <h2 className={menuNum === 2 ? "active" : ""}>
               PROJECTS
             </h2>
             {menuNum === 2 ? (
@@ -33,7 +33,7 @@ export default function MenuScreen({ menuNum }) {
         </div>
         <div className="menu-item">
           <span>
-            <h2 className={menuNum === 1 ? "" : ""}>
+            <h2 className={menuNum === 1 ? "active" : ""}>
               RESUME
             </h2>
             {menuNum === 1 ? (
@@ -45,7 +45,7 @@ export default function MenuScreen({ menuNum }) {
         </div>
         <div className="menu-item">
           <span>
-            <h2 className={menuNum === 0 ? "" : ""}>
+            <h2 className={menuNum === 0 ? "active" : ""}>
               CONTACT
             </h2>
             {menuNum === 0 ? (

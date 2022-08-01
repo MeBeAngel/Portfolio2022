@@ -12,7 +12,7 @@ export default function ProjectItem({
 }) {
   return (
     <div className="project-item">
-      <h3 className="">{title}</h3>
+      <h3 className="title">{title}</h3>
       <p>{description}</p>
       <div className="project-item__links">
         {url && (

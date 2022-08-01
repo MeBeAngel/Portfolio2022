@@ -5,7 +5,6 @@ import AboutScreen from "./AboutScreen/AboutScreen";
 import ProjectsScreen from "./ProjectsScreen/ProjectsScreen";
 import ResumeScreen from "./ResumeScreen/ResumeScreen";
 import ContactScreen from "./ContactScreen/ContactScreen";
-import { Row, Col } from "react-bootstrap";
 
 export default function Screen({
   startBtnClicked,
@@ -19,7 +18,7 @@ export default function Screen({
   formRef
 }) {
   return (
-    <Col className="gameboy-inner-top p-3">
+    <>
         {!startBtnClicked ? <StartScreen /> : ""}
         {currentScreen === "menu" ? <MenuScreen menuNum={menuNum} /> : ""}
         {currentScreen === "about" ? <AboutScreen /> : ""}
@@ -43,6 +42,6 @@ export default function Screen({
         ) : (
           ""
         )}
-    </Col>
+    </>
   );
 }
