@@ -25,6 +25,9 @@ body {
   width: 100%;
   min-height: 100%;
   margin: 0;
+  background-color: #212529;
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 .App {
@@ -33,9 +36,6 @@ body {
   align-items: center;
   width: 100%;
   min-height: 100vh;
-  background-color: #212529;
-  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 a {
