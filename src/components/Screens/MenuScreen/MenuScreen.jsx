@@ -6,7 +6,8 @@ import CodeSandbox from "../../../assets/code-sandbox.svg";
 
 export default function MenuScreen({ menuNum }) {
   return (
-      <div className="menu-screen">
+    <div className="menu-screen">
+      <div className="menu-wrapper">
         <div className="menu-item">
           <span>
             <h2 className={menuNum === 3 ? "active" : ""}>
@@ -68,5 +69,6 @@ export default function MenuScreen({ menuNum }) {
           </a>
         </div>
       </div>
+    </div>
   );
 }

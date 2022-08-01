@@ -210,26 +210,27 @@
   width: 100%;
   height: 100%;
 }
-.menu-screen .menu-item {
+.menu-screen .menu-wrapper .menu-item {
   height: 50px;
 }
-.menu-screen .menu-item span {
+.menu-screen .menu-wrapper .menu-item span {
   position: relative;
 }
-.menu-screen .menu-item span h2 {
+.menu-screen .menu-wrapper .menu-item span h2 {
+  text-align: center;
   margin: 0;
   color: #6c757d;
 }
-.menu-screen .menu-item span .menu-cursor {
+.menu-screen .menu-wrapper .menu-item span .menu-cursor {
   position: absolute;
   top: 0px;
   left: -40px;
   width: 30px;
 }
-.menu-screen .social .linkedin {
+.menu-screen .menu-wrapper .social .linkedin {
   margin: 0 15px;
 }
-.menu-screen .active {
+.menu-screen .menu-wrapper .active {
   color: #dc3545 !important;
 }
 
