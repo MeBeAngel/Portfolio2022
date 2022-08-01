@@ -132,7 +132,7 @@
   position: absolute;
   border-radius: 25px;
   transform: rotate(45deg);
-  box-shadow: rgba(0, 0, 0, 0.21) 3px 3px 14px 0px inset, rgba(0, 0, 0, 0.5) -3px -3px 14px 1px inset;
+  box-shadow: rgba(0, 0, 0, 0.21) 3px 3px 14px 0px inset, rgba(0, 0, 0, 0.7) -3px -3px 14px 1px inset;
 }
 .gameboy-shell .vent-bar-1 {
   right: 62px;
@@ -222,7 +222,7 @@
 }
 .menu-screen .menu-item span .menu-cursor {
   position: absolute;
-  top: 8px;
+  top: 0px;
   left: -40px;
   width: 30px;
 }
