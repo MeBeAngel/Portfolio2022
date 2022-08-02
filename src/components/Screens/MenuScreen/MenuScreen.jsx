@@ -58,13 +58,13 @@ export default function MenuScreen({ menuNum }) {
         </div>
         {/* Social Media Section */}
         <div className="menu-item social">
-          <a className="github" href="www.github.com" target="_blank">
+          <a className="github" href="https://github.com/MeBeAngel" target="_blank" rel="noreferrer">
             <img src={Github} alt="" width="35px" />
           </a>
-          <a className="linkedin" href="www.linkedin.com" target="_blank">
+          <a className="linkedin" href="https://www.linkedin.com/in/angel-g-702311122" target="_blank" rel="noreferrer">
             <img src={Linkedin} alt="" width="35px" />
           </a>
-          <a className="codesandbox" href="www.codesandbox.com" target="_blank">
+          <a className="codesandbox" href="https://codesandbox.io/u/mebeangel" target="_blank" rel="noreferrer">
             <img src={CodeSandbox} alt="" width="35px" />
           </a>
         </div>
