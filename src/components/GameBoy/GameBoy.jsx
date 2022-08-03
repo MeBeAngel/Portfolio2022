@@ -111,7 +111,6 @@ export default function GameBoy() {
     ) {
       e.preventDefault();
       handleSubmit();
-      setCurrentScreen("menu");
     }
     playPress();
   };
@@ -134,6 +133,7 @@ export default function GameBoy() {
         console.log(error.text);
       });
     setInputField({ user_name: "", user_email: "", message: "" });
+    setCurrentScreen("menu");
   };
 
   return (

@@ -19,29 +19,29 @@ export default function Screen({
 }) {
   return (
     <>
-        {!startBtnClicked ? <StartScreen /> : ""}
-        {currentScreen === "menu" ? <MenuScreen menuNum={menuNum} /> : ""}
-        {currentScreen === "about" ? <AboutScreen /> : ""}
-        {currentScreen === "projects" ? (
-          <ProjectsScreen projectSlideNum={projectSlideNum} />
-        ) : (
-          ""
-        )}
-        {currentScreen === "resume" ? (
-          <ResumeScreen resumeSlideNum={resumeSlideNum} />
-        ) : (
-          ""
-        )}
-        {currentScreen === "contact" ? (
-          <ContactScreen
-            handleSubmit={handleSubmit}
-            setInputField={setInputField}
-            inputField={inputField}
-            formRef={formRef}
-          />
-        ) : (
-          ""
-        )}
+      {!startBtnClicked ? <StartScreen /> : ""}
+      {currentScreen === "menu" ? <MenuScreen menuNum={menuNum} /> : ""}
+      {currentScreen === "about" ? <AboutScreen /> : ""}
+      {currentScreen === "projects" ? (
+        <ProjectsScreen projectSlideNum={projectSlideNum} />
+      ) : (
+        ""
+      )}
+      {currentScreen === "resume" ? (
+        <ResumeScreen resumeSlideNum={resumeSlideNum} />
+      ) : (
+        ""
+      )}
+      {currentScreen === "contact" ? (
+        <ContactScreen
+          handleSubmit={handleSubmit}
+          setInputField={setInputField}
+          inputField={inputField}
+          formRef={formRef}
+        />
+      ) : (
+        ""
+      )}
     </>
   );
 }

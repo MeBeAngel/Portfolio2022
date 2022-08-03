@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 
 export default function ContactScreen({
@@ -7,9 +7,47 @@ export default function ContactScreen({
   inputField,
   formRef,
 }) {
+  const [touched, setTouched] = useState({
+    user_name: false,
+    user_email: false,
+    message: false
+  });
+  const [errorMessage, setErrorMessage] = useState([]);
+
   const handleChange = (e) => {
     setInputField({ ...inputField, [e.target.name]: e.target.value });
+    if (inputField.user_name) {
+      setTouched({ ...touched, user_name: false });
+    }
+    if (inputField.user_email) {
+      setTouched({ ...touched, user_email: false });
+    }
+    if (inputField.message) {
+      setTouched({ ...touched, message: false });
+    }
   };
+
+  const handleBlur = (e) => {
+    let target = e.target.name;
+    if (target === "user_name") {
+      if (!inputField.user_name) {
+        console.log(`${target} was touched`);
+        setTouched({ ...touched, user_name: true });
+      }
+    }
+    if (target === "user_email") {
+      if (!inputField.user_email) {
+        console.log(`${target} was touched`);
+        setTouched({ ...touched, user_email: true });
+      }
+    }
+    if (target === "message") {
+      if (!inputField.message) {
+        console.log(`${target} was touched`);
+        setTouched({ ...touched, message: true });
+      }
+    }
+  }
 
   return (
     <div className="contact-screen">
@@ -24,12 +62,13 @@ export default function ContactScreen({
           controlId="name"
         >
           <Form.Control
-            className=""
+            className={touched.user_name ? "border-danger" : ""}
             name="user_name"
             type="text"
             placeholder="Name"
             value={inputField.user_name}
             onChange={handleChange}
+            onBlur={handleBlur}
           />
         </Form.Group>
 
@@ -39,12 +78,13 @@ export default function ContactScreen({
           controlId="email"
         >
           <Form.Control
-            className=""
+            className={touched.user_email ? "border-danger" : ""}
             name="user_email"
             type="email"
             placeholder="Email"
             value={inputField.user_email}
             onChange={handleChange}
+            onBlur={handleBlur}
           />
         </Form.Group>
 
@@ -54,7 +94,7 @@ export default function ContactScreen({
           controlId="message"
         >
           <Form.Control
-            className=""
+            className={touched.message ? "border-danger" : ""}
             name="message"
             rows="3"
             as="textarea"
@@ -62,16 +102,13 @@ export default function ContactScreen({
             placeholder="Message.."
             value={inputField.message}
             onChange={handleChange}
+            onBlur={handleBlur}
           />
         </Form.Group>
 
         {/* Submit Message */}
         <h6 className="submit-message">
-        {inputField.user_name && inputField.user_email && inputField.message ? (
-          "Press A to send!"
-        ) : (
-          ""
-        )}
+          {errorMessage[0]}
         </h6>
       </Form>
     </div>
